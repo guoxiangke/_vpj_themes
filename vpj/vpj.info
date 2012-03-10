@@ -1,0 +1,7 @@
+name = Vpj
+description = beta1
+version = VERSION
+core = 6.x
+engine = phptemplate
+stylesheets[all][] = style.css
+stylesheets[print][] = print.css

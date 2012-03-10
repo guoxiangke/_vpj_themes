@@ -1,0 +1,31 @@
+#header-region li a.active {
+    color: #FFFFFF;
+}
+.footer {
+margin: 0 auto;
+width: 100%;
+height: auto;
+overflow: hidden;
+color: #999;
+padding: 20px 0px;
+line-height: 19px;
+font-size: 12px;
+}
+.vp-context-image-bk {
+    overflow: hidden;
+    background-color: #6688AA;
+}
+.follow-block-body-inner {
+    float: left;
+    margin-right: 28px;
+}
+
+
+
+.lovepic {
+    float: left;
+    width: 20px;
+}
+.lovexh{float: left; width: 6px;}
+.hidden{display: none;}
+

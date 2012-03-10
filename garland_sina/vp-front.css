@@ -1,0 +1,80 @@
+delete....
+
+#user-login-form:first-child {
+    padding: 20px 30px 10px;
+}
+#edit-name-wrapper,#edit-pass-wrapper{
+	  margin-bottom: 10px;
+}
+#edit-name,#edit-pass{
+    border: 1px solid #CCCCCC;
+    height: 24px;
+    padding: 3px 2px;
+    width: 245px;
+}
+
+#edit-submit{
+    background-color: #20C3F4;
+    border: 0 none;
+    color: #FFFFFF;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    width: 80px;
+}
+#edit-name-1,#edit-pass-1{
+    border: 1px solid #CCCCCC;
+    height: 24px;
+    padding: 3px 2px;
+    width: 245px;
+}
+
+#edit-submit-1{
+    background-color: #20C3F4;
+    border: 0 none;
+    color: #FFFFFF;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    width: 80px;
+}
+#user-login-form li.sina_open_login_links {
+	background: url("http://www.sinaimg.cn/blog/developer/wiki/LOGO_32x32.png") no-repeat scroll 0px 0px transparent;
+	display: block;
+	padding: 5px 0px 5px 35px;
+	border: 1px solid #666;
+	width: 132px;
+}
+
+.fb_time p{
+	  line-height: 24px;
+}
+
+/*croll*/
+#con {
+	position:relative;
+	background-color:#FFFFFF;
+	overflow:hidden;
+}
+#con ul {
+	position:absolute;
+	margin:10px;
+	top:0;
+	left:0;
+	padding:0;
+}
+#con ul li {
+	width:100%;
+
+overflow:hidden
+}
+/**
+ * 		border-bottom:1px #333333 dotted;
+	padding:20px 0;
+ */
+#outCont{ height: 370px; }
+

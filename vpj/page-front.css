@@ -1,0 +1,59 @@
+
+	.wplck {
+    height: 440px;
+    overflow: hidden;
+    position: relative;
+	}
+	.sliderlck {
+	    height: 370px;
+	    overflow: hidden;
+	    position: relative;
+	}
+	.sliderlck li {
+    border-bottom: 1px solid #EEEEEE;
+    overflow: hidden;
+    text-indent: 4px;
+    width: 100%;
+	}
+	
+#user-login-form .form-item label {
+    display: none;
+}
+#edit-name-wrapper label,#edit-pass-wrapper label
+,#edit-name-1-wrapper label,#edit-pass-1-wrapper label
+{
+		display: block;
+	  color: #BDBDBD;
+    cursor: text;
+    height: 27px;
+    line-height: 27px;
+    padding: 0 6px;
+    position: absolute;
+}
+#edit-captcha-response-wrapper label {
+    color: #BDBDBD;
+    cursor: text;
+    display: block;
+    height: 27px;
+    line-height: 27px;
+    padding: 0 6px;
+    position: absolute;
+    top: 126px;
+}
+.form-required{
+	display: none;
+}
+#user-login label{
+	display: none;
+}
+#user-login .captcha img {
+    bottom: 80px;
+    float: right;
+    position: absolute;
+    left: 155px;
+}
+#edit-captcha-response-wrapper input{
+    height: 27px;
+    line-height: 27px;
+    width: 120px;
+}
