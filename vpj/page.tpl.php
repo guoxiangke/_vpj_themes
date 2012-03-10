@@ -5,25 +5,29 @@
 		}else{ //弹窗登录后的跳转到user/1 页了
 			drupal_goto('UCenter');
 		}
-		return;
+		return '';
 	}
 	if(arg(0)=='node'&&arg(1)=='404'){
 		include("node-404.tpl.php");
-		return;
+		return '';
 	}
 	if($user->uid==0&&arg(0)!='user'){
 		//drupal_goto($_SERVER['HTTP_REFERER']);//.'&amp;destination='.urlencode($_GET['q'])
 		//drupal_set_message('请登录后访问！','status');
 		include("page-front.tpl.php");//dirname(__FILE__).
-		return;
+		return '';
 	}
 	if(arg(0)=='VShop'){
 		if($account=user_load(arg(1))){
 			if(in_array('Seller',$account->roles)){
 				  include(dirname(__FILE__)."/page-VShop-N.tpl.php");
-					return;
+					return '';
 			}
 		}
+	}	
+	if(arg(0)=='forward'){
+		include(dirname(__FILE__)."/page-new.tpl.php");
+		return '';
 	}
 	?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">

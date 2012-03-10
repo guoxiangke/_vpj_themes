@@ -195,7 +195,7 @@ if(arg(0)=='UCenter'||$node->type=='weibo'){
 					</div>
 			     
 				</div>
-				<div id="Wrap_<?php echo $node->nid?>" class="talkWrap hidden" loading="<?php echo drupal_get_path('module','sina_vp')?>/images/loading.gif" ></div>
+				<div id="Wrap_<?php echo $node->nid?>" class="talkWrap hidden" loading="/<?php echo drupal_get_path('module','sina_vp')?>/images/loading.gif" ></div>
 				<div id="Wrap_comment_<?php echo $node->nid?>" class="hidden">Wrap_comment</div>
 				<div id="Wrap_share_<?php echo $node->nid?>" class="hidden">Wrap_share</div>
       </div>
