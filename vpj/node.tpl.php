@@ -14,9 +14,9 @@ if($node->type=='weibo'){
 		$is_zf_sql = "SELECT zid zid FROM  {sina_vp_weibo2node} WHERE  `nid` =$node->nid AND  `cid` =0 AND  `zid` <>0 ";
 		$is_zf = db_result(db_query($is_zf_sql));
 ?>
- <div class="vp-conetnt mjvp-conetnt">
-		    <div class="vp-conetnt-left mjvp-conetnt-left">
-				<div class="vp-user-pic mjvp-user-pic">
+ <div class="mjvp-conetnt">
+		    <div class="mjvp-conetnt-left">
+				<div class="mjvp-user-pic">
 								<?php  // width="50" height="50"
 									if($account->uid==$user->uid){$user_link = 'UCenter';}else{$user_link = 'UCenter/0/'.$account->uid;}											
 									$grey = drupal_get_path('module', 'sina_vp_imagetool').'/images/grey.gif';
@@ -27,21 +27,26 @@ if($node->type=='weibo'){
 									,array('html'=>TRUE,'attributes'=>array('class'=>'vp-user-pic-link')));
 								?>
 				</div>
-				<div class="vp-user-op mjvp-user-op">
-				    <div class="vp-user-op-ico mjvp-user-op-ico"></div>
-					<div class="lpic mjlpic">
-					    <div class="lpicc mjlpicc">
-							<div class="vp-user-op-cz mjvp-user-op-cz">秀一下</div>
-							<div class="vp-user-op-cz mjvp-user-op-cz">转让</div>
+				<?php if(($user->uid<>$node->uid) && in_array('Buyer', $user->roles)){//只有买家可以秀可转让，不可转让自己的。
+					?>
+				<div class="mjvp-user-op">
+				    <div class="mjvp-user-op-ico"></div>
+					<div class="mjlpic">
+					    <div class="mjlpicc">
+							<div class="mjvp-user-op-cz">秀一下</div>
+							<div class="mjvp-user-op-cz">转让</div>
 						</div>
 					</div>
-				</div>
+				</div>	
+					<?php
+				}?>
+				
 			</div>
-            <div class="vp-conetnt-right mjvp-conetnt-right">
-				<div class="content-info-top mjcontent-info-top">
-					<div class="content-user vp-float mjvp-float">
-                        <span class="username mjusername"><?php echo l($account->name,'UCenter/0/'.$account->uid)//用户名?></span>
-                        <span class="vp-term mjvp-term">[<?php echo $taxonomy_name//类别?>]</span>
+            <div class="mjvp-conetnt-right">
+				<div class="mjcontent-info-top">
+					<div class="content-user mjvp-float">
+                        <span class="mjusername"><?php echo l($account->name,'UCenter/0/'.$account->uid)//用户名?></span>
+                        <span class="mjvp-term">[<?php echo $taxonomy_name//类别?>]</span>
 					</div>        
 			    </div>
 				<div class="mjvp-context">
@@ -186,8 +191,8 @@ if($node->type=='weibo'){
 					else{
 								$deleted = TRUE;
 							?>
-							<div class="child-node mjchild-node">
-								 <div class="vp-context-body-child mjvp-context-body-child">
+							<div class="mjchild-node">
+								 <div class="mjvp-context-body-child">
 										此微博已被原作者删除。
 								</div>
 							</div>

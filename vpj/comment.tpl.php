@@ -39,8 +39,8 @@
 */
 ?>
 					<div class="logi_box">
-						<div class="vp-content-child-news-nr <?php print ($comment->new) ? ' comment-new' : ''; print ' '. $status; print ' '. $zebra; ?>">
-						    <div class="content-child-news-nr-img">
+						<div class="mjvp-content-child-news-nr">
+						    <div class="mjcontent-child-news-nr-img">
 								<?php  // width="50" height="50"									
 									$grey = drupal_get_path('module', 'sina_vp_imagetool').'/images/grey.gif';
 									imagecache_generate_image('35x35',  $comment->picture);
@@ -49,11 +49,11 @@
 					      	echo  theme('imagecache', '35x35', $grey, '', '', array('class'=>'lazy','data-original'=>'/'.$path),false) ;
 								?>
 							</div>
-							<div class="content-child-news-nr-body">
-			                    <div class="content-child-news-nr-title"><span style="color:#0078b6;"><?php print $submitted; ?>：</span>  <?php print $content ?>
-								<div class="content-child-news-nr-tm">
+							<div class="mjcontent-child-news-nr-body">
+			                    <div class="mjcontent-child-news-nr-title"><span style="color:#0078b6;"><?php print $submitted; ?>：</span>  <?php print $content ?>
+								<div class="mjcontent-child-news-nr-tm">
 
-									<div class="hhf">回复</div>
+									<div class="mjhhf">回复</div>
 								</div>
 							</div>
 						</div>

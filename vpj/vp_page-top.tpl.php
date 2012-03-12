@@ -8,8 +8,8 @@
         	<a href="http://<?php echo $_SERVER['HTTP_HOST']?>"><img src="/<?php echo path_to_theme()?>/images/logo.gif"/></a>
         </div>
         <div class="site_name">
-            <div class="vpj-name"><?php echo l('微铺街',$_SERVER['HTTP_HOST']);?></div>
-            <div class="vpj-wz"><?php echo l('weipujie.com',$_SERVER['HTTP_HOST']);?></div>           
+            <div class="vpj-name"><?php  print '<a href="'. check_url($front_page) .'">'.  check_plain($site_name) .'</a>';?></div>
+            <div class="vpj-wz"><?php  print '<a href="'. check_url($front_page) .'">'.  check_plain($site_slogan) .'</a>';?></div>           
         </div>
     <?php 
     if($user->uid){
@@ -25,8 +25,11 @@
 			<div class="user-xx">
 			    <div class="user-img">
 			    	<?php
-			    				imagecache_generate_image('35x35',  $user->picture);
+			    				if(!$user->picture)
+										$user->picture = variable_get(user_picture_default, '/sites/default/files/users/0.gif');
+									imagecache_generate_image('35x35',  $user->picture);
 									$pic_path = imagecache_create_path('35x35', $user->picture);
+									
 									//print theme('imagecache', 'preset_namespace', $image_filepath, $alt, $title, $attributes);
 					      	echo  theme('imagecache', '35x35', $pic_path, $user->name, '') ; //title alt
 			    	?>

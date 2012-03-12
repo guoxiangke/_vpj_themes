@@ -5,7 +5,9 @@
  * </div>
  */
 ?>
-  <div class="logo"><a href="<?php echo url('UCenter');?>" title="首页"><img src="<?php echo check_url($logo)?>" width="93" height="92" /></a></div>
+  <div class="logo">
+  	<a href="<?php echo url('UCenter');?>" title="首页"><img src="<?php echo check_url($logo)?>" width="93" height="92" /></a>
+  </div>
   <div class="ad_talk"><img src="<?php echo drupal_get_path('theme', 'vp')?>/images/ad_talk.jpg" width="92" height="31" /></div>
   <div class="top_line"></div>
   	<?php if (isset($primary_links)&&!drupal_is_front_page()) : ?>

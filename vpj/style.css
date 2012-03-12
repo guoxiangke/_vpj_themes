@@ -176,6 +176,7 @@ body, div, ul, li, h1, p, input {
 /************************公共类*/
 .vp-body {
 	width: 100%;
+	min-height:550px;
 }
 .vp-body-inner {
 	width: 930px;
@@ -233,7 +234,7 @@ body, div, ul, li, h1, p, input {
 	width: 70px;
 	margin-top: 10px;
 	color: #fff;
-	display: none;
+	/*display: none;*/
 }
 .mjvp-user-op-ico {
 	height: 5px;
@@ -271,7 +272,7 @@ body, div, ul, li, h1, p, input {
 	text-align: center;
 }
 .mjvp-conetnt-right {
-	width: 600px;
+	width: 590px;
 	float: left;
 	overflow: hidden;
 }
@@ -300,6 +301,7 @@ body, div, ul, li, h1, p, input {
 	color: #000;
 	line-height: 20px;
 	float: left;
+	padding-bottom:10px;
 }
 .mjvp-context-image {
 	padding: 20px 10px;
@@ -310,7 +312,7 @@ body, div, ul, li, h1, p, input {
 	float: left;
 }
 .mjcontent-info-bottom-child {
-	padding: 0 10px 10px 10px;
+	padding: 10px 10px 10px 10px;
 	width: 500px;
 	float: left;
 	width: }
@@ -323,6 +325,7 @@ body, div, ul, li, h1, p, input {
 .mjvp-context-body-child {
 	line-height: 20px;
 	color: #999999;
+	padding-bottom:10px;
 }
 .mjcontent-info-bottom {
 	width: 540px;
@@ -669,7 +672,7 @@ body, div, ul, li, h1, p, input {
 }
 .dpdpname {
 	width: 100%;
-	height: 15px;
+	height: 17px;
 	overflow: hidden;
 	margin-bottom: 10px;
 	color: #0078b6;
@@ -781,11 +784,11 @@ body, div, ul, li, h1, p, input {
 /*----------------------广场*/
 .gcvp-body-min {
 	width: 100%;
-	padding: 10px 0 0 15px;
+	padding: 30px 0 0 15px;
 }
 .gcvp-body-left {
 	width: 230px;
-	margin-top: 60px;
+	margin-top: 40px;
 	float: left;
 	overflow: hidden;
 }
@@ -796,8 +799,11 @@ body, div, ul, li, h1, p, input {
 	height: 35px;
 	line-height: 35px;
 	padding-left: 10px;
-	background-color: #a1a1a1;
+	background-color: #f0f0f0;
 	margin-bottom: 3px;
+}
+.gcvp-nav-active{
+	background-color: #a1a1a1;
 }
 .gcvp-subnav {
 	width: 100%;
@@ -805,23 +811,20 @@ body, div, ul, li, h1, p, input {
 	line-height: 35px;
 	color: #999999;
 	margin-bottom: 3px;
+	/*display:none;*/
+}
+.gcvp-subnav a{
+  color:#999999;
 }
 .gcvp-subnav p {
 	float: left;
 	text-align: center;
 	margin-left: 15px;
 }
-.gcsubnav-color {
+.gcsubnav-color  a{
 	color: #00cbff;
 }
-.gcvp-nav2 {
-	height: 35px;
-	line-height: 35px;
-	margin-bottom: 3px;
-	background-color: #f0f0f0;
-	color: #a1a1a1;
-	padding-left: 10px;
-}
+
 .gcvp-body-right {
 	float: left;
 	width: 675px;
@@ -830,7 +833,6 @@ body, div, ul, li, h1, p, input {
 }
 .gcbody-right-content {
 	width: 100%;
-	padding-top: 20px;
 	border-bottom: 1px solid #f0f0f0;
 }
 .gcright-content-title {
@@ -854,6 +856,7 @@ body, div, ul, li, h1, p, input {
 	width: 200px;
 	height: 200px;
 	overflow: hidden;
+	background-color:#f0f0f0;
 	position: relative;
 }
 .gctm-content {
@@ -2044,4 +2047,12 @@ fieldset{
     display: inline;
     list-style-type: none;
     padding: 0.5em;
+}
+
+#comments #edit-comment-wrapper{
+  width:100%;
+}
+#comments #edit-sina-vp-open-wrapper{
+  width:auto;
+	margin:25px 200px 0 40px;
 }
