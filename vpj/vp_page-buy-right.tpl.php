@@ -24,7 +24,10 @@ if((arg(0)=='Comments')&&is_numeric(arg(2))){
 								?>
 							</p>
 							<p class="mjlocation">
-								<?php echo $account->profile_location?>
+								<?php 
+								 if(in_array('Buyer', $account->roles) ){ //买家显示地理位置
+									echo $account->profile_province.'&nbsp;'.$account->profile_city;
+								 }?>
 							</p>
 						</div>
 					</div>
@@ -32,15 +35,15 @@ if((arg(0)=='Comments')&&is_numeric(arg(2))){
 						<?php 
 						//大家好，我是微铺街的一成员，欢迎大家来到微铺街	
 						 if($account->uid==$user->uid){
-							if(!$account->mjsignature){
-								$account->mjsignature="您还没有设置签名，点此设置！";
-								echo l(truncate_utf8($account->mjsignature, 55, $wordsafe = false, $dots = TRUE),"user/$account->uid/edit"); 
+							if(!$account->signature){
+								$account->signature="您还没有设置签名，点此设置！";								 
 							}
+							echo l(truncate_utf8($account->signature, 55, $wordsafe = false, $dots = TRUE),"user/$account->uid/edit");
 						 }else{
-								if(!$account->mjsignature){
-									$account->mjsignature="这家伙很懒，还没有设置签名";
+								if(!$account->signature){
+									$account->signature="这家伙很懒，还没有设置签名";
 								}
-								echo  truncate_utf8($account->mjsignature, 55, $wordsafe = false, $dots = TRUE); 
+								echo  truncate_utf8($account->signature, 55, $wordsafe = false, $dots = TRUE); 
 						 }
 						?>
 						

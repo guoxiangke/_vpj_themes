@@ -11,7 +11,6 @@
 		<!--[if lt IE 7]>
 		<?php print phptemplate_get_ie_styles(); ?>
 		<![endif]-->
-		<script type="text/javascript" src="/<?php echo path_to_theme()?>/gotop_vp.js"></script>
 	</head>
 	<body>
 		<div id="header-region" class="vp-clear-block">
@@ -20,16 +19,31 @@
 			?>
 		</div>
 		<div class="vp-body">
-				<div class="vp-body-inner">
-					 <?php if ($show_messages && $messages): print $messages; endif; ?>
-				
+				<div class="vp-body-inner">					 
 			    <div class="dpvp-body-min">
-			    <div class=""></div>
+			    <?php if ($show_messages && $messages): print $messages; endif; ?>
 			    <div class="dpvp-body-left">
-				    <div class="dpvp-sidebar">
-					  <div class="dpvp-nav"><?php echo l('订阅最多','VCenter/Sub_most');?></div>
-						<div class="dpvp-nav2"><?php echo l('最新加入','VCenter/New');?></div>
-						<div class="dpvp-nav2"><?php echo l('最新更新','VCenter/Active');?></div>
+				    <div class="gcvp-sidebar" id="VCenter-nav">
+				    <?php
+				    	switch (arg(1)) {
+								case 'Sub_most':
+									$class1 = 'gcvp-nav-active';
+									break;
+								case 'New':
+									$class2 = 'gcvp-nav-active';
+									break;
+								case 'Active':
+									$class3 = 'gcvp-nav-active';
+									break;
+								default:
+									
+									break;
+							}
+				    	
+				    ?>
+					  <div class="vcenter-nav <?php echo $class1?>"><?php echo l('订阅最多','VCenter/Sub_most');?></div>
+						<div class="vcenter-nav <?php echo $class2?>"><?php echo l('最新加入','VCenter/New');?></div>
+						<div class="vcenter-nav <?php echo $class3?>"><?php echo l('最新更新','VCenter/Active');?></div>
 					</div>
 				</div>
 		        <div class="dpvp-body-right">

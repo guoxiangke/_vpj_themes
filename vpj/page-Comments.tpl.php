@@ -18,8 +18,7 @@
 		<!--[if lt IE 7]>
 		<?php print phptemplate_get_ie_styles(); ?>
 		<![endif]-->
-		<script type="text/javascript" src="/<?php echo path_to_theme()?>/gotop_vp.js"></script>
-	</head>
+</head>
 	<body>
 		<div id="header-region" class="vp-clear-block">
 			<?php

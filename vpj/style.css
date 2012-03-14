@@ -472,6 +472,7 @@ body, div, ul, li, h1, p, input {
 	margin-top: 10px;
 }
 .mjsignature {
+  width:100%;
 	line-height: 20px;
 	font-size: 12px;
 	margin-top: 15px;
@@ -561,34 +562,16 @@ body, div, ul, li, h1, p, input {
 /*--------------------------------店铺街*/
 .dpvp-body-min {
 	width: 100%;
-	padding: 10px 0 0 15px;
+	padding: 25px 0 0 15px;
 }
 .dpvp-body-left {
 	width: 230px;
-	margin-top: 75px;
+	margin-top: 50px;
 	float: left;
 	overflow: hidden;
 }
-.dpvp-sidebar {
-	color: #ffffff;
-}
-.dpvp-nav {
-	height: 35px;
-	line-height: 35px;
-	padding-left: 10px;
-	background-color: #a1a1a1;
-	margin-bottom: 3px;
-}
 .dpsubnav-color {
 	color: #00cbff;
-}
-.dpvp-nav2 {
-	height: 35px;
-	line-height: 35px;
-	margin-bottom: 3px;
-	background-color: #f0f0f0;
-	color: #a1a1a1;
-	padding-left: 10px;
 }
 .dpvp-body-right {
 	float: left;
@@ -598,7 +581,6 @@ body, div, ul, li, h1, p, input {
 }
 .dpbody-right-content {
 	width: 100%;
-	padding-top: 25px;
 }
 .dpright-content-top {
 	padding-bottom: 5px;
@@ -634,7 +616,7 @@ body, div, ul, li, h1, p, input {
 	height: 28px;
 	float: left;
 	border: 0;
-	background: url(images/dy.gif) no-repeat;
+	background: url(images/dingyue.png) no-repeat;
 }
 .dpright-content-inner {
 	width: 100%;
@@ -695,16 +677,27 @@ body, div, ul, li, h1, p, input {
 	margin-left: 35px;
 	color: #426489;
 	padding-top: 15px;
-	overflow: hidden;
+	overflow:hidden;
 }
 .dpdianpu-dy p {
 	width: 100%;
 	overflow: hidden;
+	height:20px;
 }
 .dpvp-more {
 	text-align: right;
 	color: #0078b6;
 	padding: 10px 20px 10px 0;
+}
+
+.dpdianpu-dy .focus-action-do{
+  width:58px;
+	height:20px;
+	background-color:#cbf8f1;
+	border:1px solid #b4edfe;
+	display:block;
+	text-align:center;
+	overflow:hidden;
 }
 /*--------------------------------发布页面*/
 .fbvp-body-min {
@@ -802,6 +795,13 @@ body, div, ul, li, h1, p, input {
 	background-color: #f0f0f0;
 	margin-bottom: 3px;
 }
+.vcenter-nav{
+	height: 35px;
+	line-height: 35px;
+	padding-left: 10px;
+	background-color: #f0f0f0;
+	margin-bottom: 3px;
+}
 .gcvp-nav-active{
 	background-color: #a1a1a1;
 }
@@ -833,6 +833,7 @@ body, div, ul, li, h1, p, input {
 }
 .gcbody-right-content {
 	width: 100%;
+	margin-bottom:20px;
 	border-bottom: 1px solid #f0f0f0;
 }
 .gcright-content-title {
@@ -892,6 +893,7 @@ body, div, ul, li, h1, p, input {
 .gcpk-img-name {
 	color: #999999;
 	width: 100%;
+	height:20px;
 	overflow: hidden;
 }
 .gcpk-img-zz {
@@ -1182,7 +1184,9 @@ body, div, ul, li, h1, p, input {
   width:248px;
 	height:50px;
 	overflow:hidden;
-	font-size:16px;
+	font-size:22px;
+	font-weight:600;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 .zhucenv {
 	width: 250px;
@@ -1226,7 +1230,8 @@ body, div, ul, li, h1, p, input {
 	height: 30px;
 	border: 0;
 	color:#fff;
-	font-size:12px;
+	font-size:14px;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 .item-list {
 	margin-top: 10px;
@@ -1279,20 +1284,28 @@ body, div, ul, li, h1, p, input {
 	line-height: 30px;
 	padding-left: 10px;
 }
+.infollow-block-body{
+  width:100%;
+}
 .vp_in_con{
-	padding-left: 10px;
+	padding-left:5px;
 }
 .infollow-block-body-inner {
   width:70px;
 	padding-top: 10px;
 	float: left;
-	margin-right:10px;
 	text-align:center;
+}
+.vpj-jxs{
+  margin-right:10px;
+}
+.vpj-pds{
+  padding-left:10px;
 }
 .infollow-block-body-inner p{
   display:block;
 	width:100%;
-	height:17px;
+	height:15px;
 	overflow: hidden;
 	color: #0078b6;
 	text-align: center;
@@ -1322,26 +1335,9 @@ body, div, ul, li, h1, p, input {
 	float: left;
 	overflow: hidden;
 }
-.scvp-sidebar {
-	color: #ffffff;
-}
-.scvp-nav {
-	height: 35px;
-	line-height: 35px;
-	padding-left: 10px;
-	background-color: #a1a1a1;
-	margin-bottom: 3px;
-}
+
 .scsubnav-color {
 	color: #00cbff;
-}
-.scvp-nav2 {
-	height: 35px;
-	line-height: 35px;
-	margin-bottom: 3px;
-	background-color: #f0f0f0;
-	color: #a1a1a1;
-	padding-left: 10px;
 }
 .scvp-body-right {
 	float: left;
@@ -1827,10 +1823,11 @@ fieldset{
 #edit-profile-weibo-wrapper{
     padding-bottom:10px;
 }
+/*-------------------------------------公共*/
 #front .btn{
     cursor: pointer;
-    background-color: #006DCC;
-    background-image: -moz-linear-gradient(center top , #0088CC, #0044CC);
+    background-color: #00cbff;
+    background-image: -moz-linear-gradient(center top , #00cbff, #0084a6);
     background-repeat: repeat-x;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
     border-radius: 4px 4px 4px 4px;
@@ -1840,8 +1837,15 @@ fieldset{
 		color:#fff;		
 }
 #front .btn:hover{
-  background-color:#055dc7;
+  background-color:#00b6e5;
+	background-image: -moz-linear-gradient(center top , #00b6e5, #0084a6);
 }
+input[type="text"]:focus,input[type="password"]:focus{
+   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+   border-color: #00cbff;
+	 outline:0 none;
+}
+/*-------------------------------------*/
 #edit-name-wrapper{
   padding-bottom:20px;
 	width:100%;
@@ -2141,7 +2145,7 @@ fieldset{
 	line-height:40px;
 }
 .sellhuo-title p{
-  width:50%;
+  width:49%;
 	text-align:left;
 	color:#426489;
 	float:left;
@@ -2164,7 +2168,7 @@ fieldset{
 }
 .sellhuonr{
   float:left;
-	margin-left:20px;
+	padding-left:15px;
 }
 .sellhuobody{
   width:205px;
@@ -2197,6 +2201,8 @@ fieldset{
 }
 .sell-zrxbody{
   width:100%;
+	height:140px;
+	overflow:hidden;
 }
 .sell-zrx-xx{
 	float:left;
@@ -2216,7 +2222,7 @@ fieldset{
 .sell-zrx-zz{
   width:100px;
 	height:15px;
-	padding-top:10px;
+	margin-top:10px;
 	font-size:12px;
 	color:#426489;
 	overflow:hidden;	
@@ -2256,6 +2262,14 @@ fieldset{
 .sellinfollow-block{
   margin-top:20px;
 }
+.sellinfollow-block h2{
+  background-color: #F0F0F0;
+  color: #999999;
+  font-size: 14px;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 10px;
+}
 /*********************买家注册页*/
 .lightbox-processed #edit-profile-province-wrapper{
   float:left;
@@ -2291,4 +2305,30 @@ fieldset{
 }
 .lightbox-processed #edit-submit{
   margin: 20px 80px 20px 0; 
+}
+/*----------------------------------------------*登录*/
+#user-login{
+  margin: 0 auto;
+  padding-top: 50px;
+  width: 600px;
+}
+#user-login .captcha{
+  margin:0;
+	padding:0;
+}
+#user-login #edit-submit{
+  margin-left:200px;
+}
+/*----------------------------------------------*忘记密码*/
+#user-pass{
+  margin: 0 auto;
+  padding-top: 50px;
+  width: 600px;
+}
+#user-pass .captcha{
+  margin:0;
+	padding:0;
+}
+#user-pass #edit-submit{
+  margin-left:200px;
 }

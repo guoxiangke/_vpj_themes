@@ -2,8 +2,6 @@
 if ($uid) {
 	drupal_goto('UCenter');
 }
-
-
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language ?>" lang="<?php print $language->language ?>" dir="<?php print $language->dir ?>">
@@ -29,7 +27,6 @@ if ($uid) {
 		</div>
 		<div class="vp-body">
 		  <div class="vp-body-inner">
-		  	<?php dpm($_SESSION['sina_account']); ?>
 			<?php if( $messages ) :
 			?>
 			<div class="messages status">

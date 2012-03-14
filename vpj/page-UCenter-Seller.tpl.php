@@ -12,7 +12,9 @@
     <?php print $head ?>
     <title><?php print $head_title ?></title>
     <?php print $styles ?>
-    <?php print $scripts ?>
+    <?php 
+    //jquery_ui_add(array('ui.draggable', 'ui.droppable', 'ui.sortable'));
+    print $scripts ?>
     <script type="text/javascript" src="/<?php echo drupal_get_path('module', 'sina_vp_imagetool') .'/js/jquery-1.7.1.js'?>"></script>
     <script src="/sites/all/modules/Vp/sina_vp_imagetool/js/jquery.lazyload.min.js?a" type="text/javascript"></script>		
 		<script type="text/javascript">			
@@ -482,45 +484,47 @@
 						<div class="clear"></div>
 					</div>
 					<div class="infollow-block sellinfollow-block">
-					 <div class="infollow-block-head">他们在微薄</div>
+					 <h2>他们在微薄</h2>
 					 <div class="infollow-block-body">
-						<div class="infollow-block-body-inner">
-							<div class="infollow-block-body-img"><img src="/<?php echo path_to_theme()?>/images/5.jpg" width="50" height="50"></div>
-							<div class="infollow-block-body-size">蔡卓研蔡卓研蔡卓研蔡卓研蔡卓研</div>
+					  <div class="vp_in_con">
+							<div class="infollow-block-body-inner">
+								<img src="/<?php echo path_to_theme()?>/images/5.jpg" class="infollow-block-body-img" width="50" height="50">
+								<p>蔡卓研蔡卓研蔡卓研蔡卓研蔡卓研</p>
+							</div>
+							<div class="infollow-block-body-inner">
+								<img src="/<?php echo path_to_theme()?>/images/5.jpg" class="infollow-block-body-img" width="50" height="50">
+								<p>蔡卓研蔡卓研蔡卓研蔡卓研蔡卓研</p>
+							</div>
+							<div class="infollow-block-body-inner">
+								<img src="/<?php echo path_to_theme()?>/images/5.jpg" class="infollow-block-body-img" width="50" height="50">
+								<p>蔡卓研蔡卓研蔡卓研蔡卓研蔡卓研</p>
+							</div>
+							<div class="infollow-block-body-inner">
+								<img src="/<?php echo path_to_theme()?>/images/5.jpg" class="infollow-block-body-img" width="50" height="50">
+								<p>蔡卓研蔡卓研蔡卓研蔡卓研蔡卓研</p>
+							</div>
+							<div class="infollow-block-body-inner">
+								<img src="/<?php echo path_to_theme()?>/images/5.jpg" class="infollow-block-body-img" width="50" height="50">
+								<p>蔡卓研蔡卓研蔡卓研蔡卓研蔡卓研</p>
+							</div>
+							<div class="infollow-block-body-inner">
+								<img src="/<?php echo path_to_theme()?>/images/5.jpg" class="infollow-block-body-img" width="50" height="50">
+								<p>蔡卓研蔡卓研蔡卓研蔡卓研蔡卓研</p>
+							</div>
+							<div class="infollow-block-body-inner">
+								<img src="/<?php echo path_to_theme()?>/images/5.jpg" class="infollow-block-body-img" width="50" height="50">
+								<p>蔡卓研蔡卓研蔡卓研蔡卓研蔡卓研</p>
+							</div>
+							<div class="infollow-block-body-inner">
+								<img src="/<?php echo path_to_theme()?>/images/5.jpg" class="infollow-block-body-img" width="50" height="50">
+								<p>蔡卓研蔡卓研蔡卓研蔡卓研蔡卓研</p>
+							</div>
+							<div class="infollow-block-body-inner">
+								<img src="/<?php echo path_to_theme()?>/images/5.jpg" class="infollow-block-body-img" width="50" height="50">
+								<p>蔡卓研蔡卓研蔡卓研蔡卓研蔡卓研</p>
+							</div>
+						<div class="clear"></div>
 						</div>
-						<div class="infollow-block-body-inner">
-							<div class="infollow-block-body-img"><img src="/<?php echo path_to_theme()?>/images/5.jpg" width="50" height="50"></div>
-							<div class="infollow-block-body-size">蔡卓研</div>
-						</div>
-						<div class="infollow-block-body-inner2">
-							<div class="infollow-block-body-img"><img src="/<?php echo path_to_theme()?>/images/5.jpg" width="50" height="50"></div>
-							<div class="infollow-block-body-size">蔡卓研</div>
-						</div>
-						<div class="infollow-block-body-inner">
-							<div class="infollow-block-body-img"><img src="/<?php echo path_to_theme()?>/images/5.jpg" width="50" height="50"></div>
-							<div class="infollow-block-body-size">蔡卓研</div>
-						</div>
-						<div class="infollow-block-body-inner">
-							<div class="infollow-block-body-img"><img src="/<?php echo path_to_theme()?>/images/5.jpg" width="50" height="50"></div>
-							<div class="infollow-block-body-size">蔡卓研</div>
-						</div>
-						 <div class="infollow-block-body-inner2">
-							<div class="infollow-block-body-img"><img src="/<?php echo path_to_theme()?>/images/5.jpg" width="50" height="50"></div>
-							<div class="infollow-block-body-size">蔡卓研</div>
-						</div>
-						<div class="infollow-block-body-inner">
-							<div class="infollow-block-body-img"><img src="/<?php echo path_to_theme()?>/images/5.jpg" width="50" height="50"></div>
-							<div class="infollow-block-body-size">蔡卓研</div>
-						</div>
-						<div class="infollow-block-body-inner">
-							<div class="infollow-block-body-img"><img src="/<?php echo path_to_theme()?>/images/5.jpg" width="50" height="50"></div>
-							<div class="infollow-block-body-size">蔡卓研</div>
-						</div>
-						<div class="infollow-block-body-inner2">
-							<div class="infollow-block-body-img"><img src="/<?php echo path_to_theme()?>/images/5.jpg" width="50" height="50"></div>
-							<div class="infollow-block-body-size">蔡卓研</div>
-						</div>
-							<div class="clear"></div>
 					 </div>
 				</div>
 				</div>
