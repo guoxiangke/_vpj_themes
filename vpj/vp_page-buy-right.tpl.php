@@ -15,7 +15,6 @@ if((arg(0)=='Comments')&&is_numeric(arg(2))){
 									echo l(theme('imagecache', '65x65', $account->picture, '编辑个人资料', $account->name, array('class'=>'vp-user-picture')),"user/$account->uid/edit",array('html'=>TRUE,'attributes'=>array('class'=>'Buyer-user-link')));
 								else echo l(theme('imagecache', '65x65', $account->picture, $account->name, $account->name, array('class'=>'vp-user-picture')),"UCenter/0/$account->uid",array('html'=>TRUE,'attributes'=>array('class'=>'Buyer-user-link')));
 							?>
-							<!--img src="3.jpg" alt="" width="65" height="65"/-->
 						</div>
 						<div class="mjvpj-info">
 							<p class="mjvpj-name">

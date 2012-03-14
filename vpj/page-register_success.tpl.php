@@ -48,7 +48,7 @@ if ($uid) {
 			<p>Thank you for applying for an account. Your account is currently pending approval by the site administrator.
 Once it has been approved, you will receive an e-mail containing further instructions.</p>
 </div>
-			<div class="ddbtn"><a class="overbtn">完成注册</a></div>
+			<div class="ddbtn"><a class="overbtn" href="/">完成注册</a></div>
 		</div>
     </div>
 		</div>   

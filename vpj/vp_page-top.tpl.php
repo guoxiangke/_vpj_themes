@@ -19,7 +19,7 @@
                 <li class="vpjnav"><?php echo l('首页','UCenter');?></li>
                 <li class="vpjnav"><?php echo l('我的主页','UCenter/0/'.$user->uid);?></li>
                 <li class="vpjnav"><?php echo l('店铺街','VCenter');?></li>
-                <li class="vpjnav"><?php echo l('广场','plaza');?></li>
+                <li class="vpjnav"><?php echo l('广场','plaza/Show');?></li>
             </ul>
         </div>   	
 			<div class="user-xx">
@@ -41,9 +41,9 @@
     	?> 
     	<div class="navigation">
             <ul>
-                <li class="vpjnav"><?php echo l('首页','#',array('attributes'=>array('class'=>'login_link')));?></li>
-                <li class="vpjnav"><?php echo l('店铺街','#',array('attributes'=>array('class'=>'login_link')));?></li>
-                <li class="vpjnav"><?php echo l('广场','#',array('attributes'=>array('class'=>'login_link')));?></li>
+                <li class="vpjnav"><?php echo l('首页','/',array('attributes'=>array('class'=>'login_link')));?></li>
+                <li class="vpjnav"><?php echo l('店铺街','/',array('attributes'=>array('class'=>'login_link')));?></li>
+                <li class="vpjnav"><?php echo l('广场','/',array('attributes'=>array('class'=>'login_link')));?></li>
             </ul>
         </div>   	
 
