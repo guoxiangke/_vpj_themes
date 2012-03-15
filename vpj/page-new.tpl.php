@@ -49,24 +49,18 @@
 					<select id="lead_">
 
 						<?php
-						/**
-						*卖家部分
-						*/
+						if(in_array('Seller', $user->roles)){
 						?>
 						<option value="-新品">新品</option>
 						<option value="-活动">活动</option>
 						<option value="-爆款">爆款</option>
 						<option value="-特卖">特卖</option>
-					
-						
 						<?php
-						/**
-						*买家部分
-						*/
+						}elseif(in_array('Buyer', $user->roles)){
 						?>
-						
 						<option value="-转让">转让</option>
 						<option value="-真人秀">真人秀</option>
+						<?}?>
 					</select>
 					
 					</div>
@@ -94,6 +88,7 @@
 <script type="text/javascript">
 	$().ready(function(){
 			$('.fbuploadsize').click(function(){
+				console.log(123);
 				$('.form-file').click();
 			})
 	})

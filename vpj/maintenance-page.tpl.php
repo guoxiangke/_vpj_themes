@@ -61,7 +61,7 @@
 
       <?php if ($left): ?>
         <div id="sidebar-left" class="sidebar">
-          <?php if ($search_box): ?><div class="block block-theme"><?php print $search_box ?></div><?php endif; ?>
+         
           <?php print $left ?>
         </div>
       <?php endif; ?>

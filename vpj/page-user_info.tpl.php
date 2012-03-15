@@ -25,8 +25,7 @@
 		<div class="vp-body-inner">		 
 		<?php			
 			print $content;
-		?>	
-		<div class="button">提交</div>
+		?>
 	  </div>
 	</div>
 <div class="hidden" id="user_login_block_reg">
@@ -40,11 +39,16 @@
 
 
 <script type="text/javascript">
-	$().ready(function(){
-		$('.description').click(function(){
-			$('.form-file').click();
-		})
-	})
+	$(document).ready(function(){
+		$('#vp-upload-userinfo').click(function(){
+			$('#edit-picture-upload').click();
+		});
+		
+		$('#edit-picture-upload').change(function(){
+			$('.picture').hide();
+			$(this).fadeIn('slow');
+		});
+	});
 </script>
 </body>
 </html>

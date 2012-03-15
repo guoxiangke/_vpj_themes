@@ -1,4 +1,3 @@
-
 <?php
 if($node->type=='weibo'){
 		$account = user_load($node->uid);
@@ -20,6 +19,8 @@ if($node->type=='weibo'){
 								<?php  // width="50" height="50"
 									if($account->uid==$user->uid){$user_link = 'UCenter';}else{$user_link = 'UCenter/0/'.$account->uid;}											
 									$grey = drupal_get_path('module', 'sina_vp_imagetool').'/images/grey.gif';
+									if(!$account->picture)
+									$account->picture = variable_get(user_picture_default, '/sites/default/files/users/0.gif');
 									imagecache_generate_image('50x50',  $account->picture);
 									$path = imagecache_create_path('50x50', $account->picture);
 									echo l(theme('imagecache', '50x50', $grey, '', '', array('class'=>'lazy','data-original'=>'/'.$path),FALSE)
@@ -178,12 +179,12 @@ if($node->type=='weibo'){
 							<?php echo l(sina_vp_time_format($z_node->created),"node/$z_node->nid",array('html'=>true));?>
 							</div>
 								<div class="mjvp-link">
-									<span class="mjvp-loveit">
+									<div class="vp-favor-action">
 										<div class="mjlovepic"><img src="<?php echo path_to_theme();?>/images/xin.gif" /></div>
-										<div class="mjlovexh"><?echo flag_create_link('bookmarks', $z_node->nid);	?></div>
-									</span>
-									<span class="mjvp-loveit"><?echo l("点评($z_node->comment_count)","node/$z_node->nid", array('fragment'=>'comment-form'));?></span>
-									<span class="mjvp-loveit"><?php echo l("分享($share_counts_z)","forward/$taxonomy_id_z/$z_node->nid"); ?></span>
+										<div class="mjlovexh"><?echo flag_create_link('bookmarks', $z_node->nid);	?></div>										
+									</div>
+									<span class="mjvp-loveit"><?echo l("点评$z_node->comment_count","node/$z_node->nid", array('fragment'=>'comment-form'));?></span>
+									<span class="mjvp-loveit"><?php echo l("分享$share_counts_z","forward/$taxonomy_id_z/$z_node->nid"); ?></span>
 								</div>
 								<div class="clear"></div>	
               </div>  						
@@ -206,15 +207,15 @@ if($node->type=='weibo'){
 	         		<div class="mjcontent-info-bottom">
 								<div class="mjcontent-time mjvp-float-time">12秒前</div>
 								<div class="mjvp-link">
-									<span class="mjvp-loveit">
+									<div class="vp-favor-action">
 										<div class="mjlovepic"><img src="/<?php echo path_to_theme()?>/images/xin.gif"></div>
 										<div class="mjlovexh"><?echo flag_create_link('bookmarks', $node->nid);	?></div>
+									</div>
+									<span class="mjvp-loveit">
+										<a href="javascript:void(0);"  class="vp_comment_add" request="<?php echo url("vp/comment_ajax/$node->nid")//no_comments ?>" nid="<?php echo $node->nid?>">点评<?php echo $node->comment_count?></a>
 									</span>
 									<span class="mjvp-loveit">
-										<a href="javascript:void(0);"  class="vp_comment_add" request="<?php echo url("vp/comment_ajax/$node->nid")//no_comments ?>" nid="<?php echo $node->nid?>">点评(<?php echo $node->comment_count?>)</a>
-									</span>
-									<span class="mjvp-loveit">
-										<a href="javascript:void(0);"  class="vp_share_add" request="<?php echo url("forward/$taxonomy_id/$node->nid/ajax")?>" tid="<?php echo $taxonomy_id?>" nid="<?php echo $node->nid?>">分享(<?php echo $share_counts?>)</a>	
+										<a href="javascript:void(0);"  class="vp_share_add" request="<?php echo url("forward/$taxonomy_id/$node->nid/ajax")?>" tid="<?php echo $taxonomy_id?>" nid="<?php echo $node->nid?>">分享<?php echo $share_counts?></a>	
 									</span>
 								</div>
 							</div>

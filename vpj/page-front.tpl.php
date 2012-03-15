@@ -85,7 +85,7 @@
 			</div>
 			<div class="con_right">
 					<?php if ($right): ?>
-							<?php if (!$left && $search_box): ?><div class="block block-theme"><?php print $search_box ?></div><?php endif; ?>
+							
 							<?php print $right ?>
 					<?php endif; ?>	    
 			</div>

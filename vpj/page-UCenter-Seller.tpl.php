@@ -24,6 +24,8 @@
 			    effect : "fadeIn",
 			    threshold : 500
 				});
+				//alert($('.gcfudiv').length);
+				$('.gcfudiv').css('position','absolute');
 			});
 		</script>	
 		<!--[if lt IE 7]>
@@ -123,9 +125,11 @@
 									  	<?php echo l($activity_node->title,"node/$activity_node->nid",array('html'=>TRUE,'attributes'=>array('class'=>'Seller-activity-content'))); ?>
 										</div>
 										<div class="sellhuo-zz">
-											<img src="/<?php echo path_to_theme()?>/images/xin.gif" height="15" width="15">
-											<?echo flag_create_link('bookmarks', $activity_node->nid);	?>
-											<?php echo l("点评($activity_node->comment_count)","node/$activity_node->nid/",array('fragment'=>'comment-form','attributes'=>array('class'=>'Seller-Sell-forward')));?>
+											<div class="vp-favor-action">
+												<img src="/<?php echo path_to_theme()?>/images/xin.gif" height="15" width="15">
+												<?echo flag_create_link('bookmarks', $activity_node->nid);	?>
+											</div>
+											<?php echo l("点评$activity_node->comment_count","node/$activity_node->nid/",array('fragment'=>'comment-form','attributes'=>array('class'=>'Seller-Sell-forward')));?>
 											<?php 
 						          	$taxonomys = $activity_node->taxonomy;
 												if(is_array($taxonomys))
@@ -135,7 +139,7 @@
 														$taxonomy_id = 		$obj->tid;	
 													}
 												}
-												echo l("分享($share_counts)","forward/$taxonomy_id/$activity_node->nid",array('attributes'=>array('class'=>'Seller-Sell-forward')));
+												echo l("分享$share_counts","forward/$taxonomy_id/$activity_node->nid",array('attributes'=>array('class'=>'Seller-Sell-forward')));
 											?>
 										</div>
 									</div>
@@ -143,6 +147,18 @@
 								</div>
 								<?}else{echo'暂无内容';}?>
 							</div>
+							<!--left-->
+								<div class="gcfudiv" >
+									<div class="gcfudiv-top">
+										<input type="text" class="gcfudivtext"><a href="#" class="close_box" style="text-decoration:none; font-color:black;position:absolute;">x</a>
+										<div class="clear"></div>
+									</div>
+									<div class="gcfudiv-bottom">
+										<img src="images/5.jpg" class="hideMe" width="35" height="35"/>
+										<p><span class="gcvp-name">小精灵：</span>我觉的点点衣服好看看年年</p>
+										<div class="clear"></div>
+									</div>			
+								</div>	
 							<div class="sellhuo huopaoright">
 							  <div class="sellhuo-title">
 								  <p>爆款</p>
@@ -184,9 +200,11 @@
 									  	<?php echo l($activity_node->title,"node/$activity_node->nid",array('html'=>TRUE,'attributes'=>array('class'=>'Seller-activity-content'))); ?>
 										</div>
 										<div class="sellhuo-zz">
-											<img src="/<?php echo path_to_theme()?>/images/xin.gif" height="15" width="15">
-											<?echo flag_create_link('bookmarks', $activity_node->nid);	?>
-											<?php echo l("点评($activity_node->comment_count)","node/$activity_node->nid/",array('fragment'=>'comment-form','attributes'=>array('class'=>'Seller-Sell-forward')));?>
+											<div class="vp-favor-action">
+												<img src="/<?php echo path_to_theme()?>/images/xin.gif" height="15" width="15">
+												<?echo flag_create_link('bookmarks', $activity_node->nid);	?>
+											</div>
+											<?php echo l("点评$activity_node->comment_count","node/$activity_node->nid/",array('fragment'=>'comment-form','attributes'=>array('class'=>'Seller-Sell-forward')));?>
 											<?php 
 						          	$taxonomys = $activity_node->taxonomy;
 												if(is_array($taxonomys))
@@ -196,7 +214,7 @@
 														$taxonomy_id = 		$obj->tid;	
 													}
 												}
-												echo l("分享($share_counts)","forward/$taxonomy_id/$activity_node->nid",array('attributes'=>array('class'=>'Seller-Sell-forward')));
+												echo l("分享$share_counts","forward/$taxonomy_id/$activity_node->nid",array('attributes'=>array('class'=>'Seller-Sell-forward')));
 											?>
 										</div>
 									</div>
@@ -204,6 +222,18 @@
 								</div>
 								<?}else{echo'暂无内容';}?>
 							</div>
+									<!--right-->
+								<div class="gcfudiv" >
+									<div class="gcfudiv-top">
+										<input type="text" class="gcfudivtext"><a href="#" class="close_box" style="text-decoration:none; font-color:black;position:absolute;">x</a>
+										<div class="clear"></div>
+									</div>
+									<div class="gcfudiv-bottom">
+										<img src="images/5.jpg" class="hideMe" width="35" height="35"/>
+										<p><span class="gcvp-name">小精灵：</span>我觉的点点衣服好看看年年</p>
+										<div class="clear"></div>
+									</div>			
+								</div>	
 							<div class="clear"></div>
 						</div>
 						<div class="sell-ztxz">
@@ -256,14 +286,29 @@
 										</div>
 										<div class="sell-zrx-zz">
 											<div class="sellzrx-love">
-												<img src="/<?php echo path_to_theme()?>/images/xin.gif" height="15" width="15">
-												<?echo flag_create_link('bookmarks', $activity_node->nid);	?>
+												<div class="vp-favor-action">
+													<img src="/<?php echo path_to_theme()?>/images/xin.gif" height="15" width="15">
+													<?echo flag_create_link('bookmarks', $activity_node->nid);	?>
+												</div>
 											</div>
 											<div class="sellzrx-diping">
 											<?php echo l("点评($activity_node->comment_count)","node/$activity_node->nid/",array('fragment'=>'comment-form','attributes'=>array('class'=>'Seller-Sell-forward')));?>
 											</div>
 										</div>
 									</div>
+										<!--here-->
+											<div class="gcfudiv" >
+												<div class="gcfudiv-top">
+													<input type="text" class="gcfudivtext"><a href="#" class="close_box" style="text-decoration:none; font-color:black;position:absolute;">x</a>
+													<div class="clear"></div>
+												</div>
+												<div class="gcfudiv-bottom">
+													<img src="images/5.jpg" class="hideMe" width="35" height="35"/>
+													<p><span class="gcvp-name">小精灵：</span>我觉的点点衣服好看看年年</p>
+													<div class="clear"></div>
+												</div>			
+											</div>	
+										<!--end-->
 									<?}} if($count==0){echo '还没有秀呢!';}?>
 									<div class="clear"></div>
 								</div>
@@ -317,14 +362,29 @@
 										</div>
 										<div class="sell-zrx-zz">
 											<div class="sellzrx-love">
-												<img src="/<?php echo path_to_theme()?>/images/xin.gif" height="15" width="15">
-												<?echo flag_create_link('bookmarks', $activity_node->nid);	?>
+												<div class="vp-favor-action">
+													<img src="/<?php echo path_to_theme()?>/images/xin.gif" height="15" width="15">
+													<?echo flag_create_link('bookmarks', $activity_node->nid);	?>
+												</div>
 											</div>
 											<div class="sellzrx-diping">
 											<?php echo l("点评($activity_node->comment_count)","node/$activity_node->nid/",array('fragment'=>'comment-form','attributes'=>array('class'=>'Seller-Sell-forward')));?>
 											</div>
 										</div>
 									</div>
+										<!--here-->
+											<div class="gcfudiv" >
+												<div class="gcfudiv-top">
+													<input type="text" class="gcfudivtext"><a href="#" class="close_box" style="text-decoration:none; font-color:black;position:absolute;">x</a>
+													<div class="clear"></div>
+												</div>
+												<div class="gcfudiv-bottom">
+													<img src="images/5.jpg" class="hideMe" width="35" height="35"/>
+													<p><span class="gcvp-name">小精灵：</span>我觉的点点衣服好看看年年</p>
+													<div class="clear"></div>
+												</div>			
+											</div>	
+										<!--end-->
 									<?}} if($count==0){echo '还没有转让潮!';}?>
 									<div class="clear"></div>
 								</div>
@@ -367,14 +427,29 @@
 													</div>
 													<div class="sell-zrx-zz">
 														<div class="sellzrx-love">
+															<div class="vp-favor-action">
 															<img src="/<?php echo path_to_theme()?>/images/xin.gif" height="15" width="15">
 															<?echo flag_create_link('bookmarks', $activity_node->nid);	?>
+															</div>
 														</div>
 														<div class="sellzrx-diping">
 														<?php echo l("点评($activity_node->comment_count)","node/$activity_node->nid/",array('fragment'=>'comment-form','attributes'=>array('class'=>'Seller-Sell-forward')));?>
 														</div>
 													</div>
 												</div>
+										<!--here-->
+											<div class="gcfudiv" >
+												<div class="gcfudiv-top">
+													<input type="text" class="gcfudivtext"><a href="#" class="close_box" style="text-decoration:none; font-color:black;position:absolute;">x</a>
+													<div class="clear"></div>
+												</div>
+												<div class="gcfudiv-bottom">
+													<img src="images/5.jpg" class="hideMe" width="35" height="35"/>
+													<p><span class="gcvp-name">小精灵：</span>我觉的点点衣服好看看年年</p>
+													<div class="clear"></div>
+												</div>			
+											</div>	
+										<!--end-->
 												<?php
 											}
 									}}else{
@@ -423,14 +498,29 @@
 													</div>
 													<div class="sell-zrx-zz">
 														<div class="sellzrx-love">
+															<div class="vp-favor-action">
 															<img src="/<?php echo path_to_theme()?>/images/xin.gif" height="15" width="15">
 															<?echo flag_create_link('bookmarks', $activity_node->nid);	?>
+															</div>
 														</div>
 														<div class="sellzrx-diping">
 														<?php echo l("点评($activity_node->comment_count)","node/$activity_node->nid/",array('fragment'=>'comment-form','attributes'=>array('class'=>'Seller-Sell-forward')));?>
 														</div>
 													</div>
 												</div>
+										<!--here-->
+											<div class="gcfudiv" >
+												<div class="gcfudiv-top">
+													<input type="text" class="gcfudivtext"><a href="#" class="close_box" style="text-decoration:none; font-color:black;position:absolute;">x</a>
+													<div class="clear"></div>
+												</div>
+												<div class="gcfudiv-bottom">
+													<img src="images/5.jpg" class="hideMe" width="35" height="35"/>
+													<p><span class="gcvp-name">小精灵：</span>我觉的点点衣服好看看年年</p>
+													<div class="clear"></div>
+												</div>			
+											</div>	
+										<!--end-->
 												<?php
 											}
 									}}else{

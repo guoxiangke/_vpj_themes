@@ -341,13 +341,20 @@ body, div, ul, li, h1, p, input {
 	float: right;
 	color: #426489;
 }
+.mjvp-body-center .vp-favor-action{
+	max-height: 20px;
+	margin-left: 15px;
+	float:left;
+}
 .mjvp-loveit {
 	max-height: 20px;
 	margin-left: 15px;
+	float:left;
 }
 .mjlovepic {
 	float: left;
 	margin-top: 1px;
+	cursor:pointer;
 }
 .mjlovexh {
 	float: left;
@@ -850,7 +857,6 @@ body, div, ul, li, h1, p, input {
 	float: left;
 	margin-left: 20px !important;
 	margin-left: 15px; /* IE6 */
-	overflow: hidden;
 	padding: 10px 0 10px 0;
 }
 .gcvp-body-bottom-pk-right-img {
@@ -910,6 +916,7 @@ body, div, ul, li, h1, p, input {
 .gclovepic {
 	float: left;
 	margin-top: 1px;
+	cursor:pointer;
 }
 .gclovexh {
 	float: left;
@@ -930,19 +937,20 @@ body, div, ul, li, h1, p, input {
 }
 .gcfudiv {
 	position: absolute;
-	top: 200px;
+	top: 280px;
 	left: 0;
 	width: 195px;
 	height: 100px;
 	overflow: hidden;
 	background-color: #d1f6ff;
 	z-index: 12345633;
-	padding: 5px 0 0 5px;
+	padding: 5px 0 5px 5px;
 }
 .gcfudivtext {
-	width: 155px;
+	width: 148px;
 	height: 45px;
 	float: left;
+	font-size:12px;
 }
 .gcfudivbtn {
 	width: 30px;
@@ -952,7 +960,7 @@ body, div, ul, li, h1, p, input {
 	background-color: #00cbff;
 	border: 0;
 	float: left;
-	margin: 25px 0 0 3px;
+	margin: 25px 0 0 5px;
 }
 .gcfudiv-bottom {
 	margin-top: 10px;
@@ -965,11 +973,12 @@ body, div, ul, li, h1, p, input {
 }
 .gcfudiv-bottom p {
 	float: left;
-	width: 150px;
+	width: 145px;
 	height: 35px;
 	overflow: hidden;
 	margin-left: 10px;
 	color: #999999;
+	font-size:12px;
 }
 .gcvp-name {
 	color: #0078b6;
@@ -1292,6 +1301,8 @@ body, div, ul, li, h1, p, input {
 }
 .infollow-block-body-inner {
   width:70px;
+	height:70px;
+	overflow:hidden;
 	padding-top: 10px;
 	float: left;
 	text-align:center;
@@ -1493,6 +1504,8 @@ body, div, ul, li, h1, p, input {
 .tjselectsf {
 	margin-top: 40px;
 	width: 100%;
+	height:390px;
+	overflow:hidden;
 	border: 1px solid #000;
 }
 .tjbody-right-content {
@@ -1501,10 +1514,19 @@ body, div, ul, li, h1, p, input {
 	padding-top: 25px;
 	margin: 0 auto;
 }
+.tjbody-right-content .dpright-content-top ul li{
+  display:block;
+	width:10%;
+	float:Left;
+}
+.tjbody-right-content #vp_recommend_focus{
+  width:100%;
+	height:100%;
+}
 .tjvp-xyb {
 	width: 80px;
 	height: 30px;
-	margin: 20px 0 20px 20px;
+	margin: 20px 0 20px 0;
 	line-height: 30px;
 	text-align: center;
 	color: #fff;
@@ -1676,7 +1698,7 @@ fieldset{
 
 #edit-picture-upload{display:none;}
 #edit-profile-location-wrapper{width:90%;}
-#user_info .form-submit{display:none;}
+#user_info .form-submit{display:block;}
 #edit-picture-upload-wrapper div.description{display: block;
 	margin-left:10px;
 	float: left;
@@ -1840,7 +1862,7 @@ fieldset{
   background-color:#00b6e5;
 	background-image: -moz-linear-gradient(center top , #00b6e5, #0084a6);
 }
-input[type="text"]:focus,input[type="password"]:focus{
+#front input[type="text"]:focus,input[type="password"]:focus{
    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
    border-color: #00cbff;
 	 outline:0 none;
@@ -2221,7 +2243,7 @@ input[type="text"]:focus,input[type="password"]:focus{
 }
 .sell-zrx-zz{
   width:100px;
-	height:15px;
+	height:18px;
 	margin-top:10px;
 	font-size:12px;
 	color:#426489;
@@ -2276,9 +2298,9 @@ input[type="text"]:focus,input[type="password"]:focus{
 	padding-bottom:20px;
 }
 .lightbox-processed #edit-profile-city-wrapper{
-  width:120px;
   float:left;
 	padding-bottom:20px;
+	width:50%;
 }
 .lightbox-processed #edit-profile-region-wrapper{
   float:left;
@@ -2306,6 +2328,9 @@ input[type="text"]:focus,input[type="password"]:focus{
 .lightbox-processed #edit-submit{
   margin: 20px 80px 20px 0; 
 }
+#user-profile-form-4vp #edit-submit{
+  margin-left:350px;
+}
 /*----------------------------------------------*登录*/
 #user-login{
   margin: 0 auto;
@@ -2331,4 +2356,42 @@ input[type="text"]:focus,input[type="password"]:focus{
 }
 #user-pass #edit-submit{
   margin-left:200px;
+}
+/*----------------------------------------------*修改资料页*/
+#user_info .picture{
+  margin-left:200px;
+}
+.admin-menu #edit-submit{
+  margin-left:350px;
+}
+/*----------------------------------------------*错误页面*/
+.lightbox-processed .left-corner .clear-block{
+  min-height:502px;
+}
+.lightbox-processed .left-corner #footer .clear-block{
+  min-height:0;
+}
+.lightbox-processed .clear-block:after{
+  content: "";
+}
+/*----------------------------------------------*卖家注册*/
+.fbvp-body-min #edit-title-wrapper .description{
+  display:block;
+	float: none;
+}
+.fbvp-body-min #blind_t_info{
+  margin:20px 0 0 60px;
+}
+.fbvp-body-min  .filefield-upload{
+  display:none;
+}
+.fbvp-body-min #edit-taxonomy-2-wrapper{
+  display:none;
+}
+.fbvp-body-min #edit-field-image-link-0-url{
+  width:230px;
+	height:25px;
+	line-height:25px;
+	padding-left:5px;
+	float:left;
 }
