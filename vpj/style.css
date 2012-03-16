@@ -341,7 +341,7 @@ body, div, ul, li, h1, p, input {
 	float: right;
 	color: #426489;
 }
-.mjvp-body-center .vp-favor-action{
+.vp-favor-action{
 	max-height: 20px;
 	margin-left: 15px;
 	float:left;
@@ -691,6 +691,11 @@ body, div, ul, li, h1, p, input {
 	overflow: hidden;
 	height:20px;
 }
+.vcenter-dpvp-more{
+	text-align: right;
+	color: #0078b6;
+	padding: 10px 20px 10px 0;
+}
 .dpvp-more {
 	text-align: right;
 	color: #0078b6;
@@ -742,11 +747,13 @@ body, div, ul, li, h1, p, input {
 	font-size: 16px;
 	color: #426489;
 	float: left;
+	margin-right:170px;
 }
 .fbuploadsize {
 	color: #999999;
 	float: left;
-	margin-left: 170px;
+	margin:0;
+	cursor:pointer;
 }
 .fbfbbw {
 	padding-top: 20px;
@@ -865,6 +872,7 @@ body, div, ul, li, h1, p, input {
 	overflow: hidden;
 	background-color:#f0f0f0;
 	position: relative;
+	text-align:center;
 }
 .gctm-content {
 	position: absolute;
@@ -899,7 +907,7 @@ body, div, ul, li, h1, p, input {
 .gcpk-img-name {
 	color: #999999;
 	width: 100%;
-	height:20px;
+	height:19px;
 	overflow: hidden;
 }
 .gcpk-img-zz {
@@ -937,20 +945,31 @@ body, div, ul, li, h1, p, input {
 }
 .gcfudiv {
 	position: absolute;
-	top: 280px;
+	top: 270px;
 	left: 0;
-	width: 195px;
-	height: 100px;
-	overflow: hidden;
-	background-color: #d1f6ff;
+	width: 200px;
+	overflow:hidden;
 	z-index: 12345633;
 	padding: 5px 0 5px 5px;
+}
+.gc-pl-sanjiao{
+	margin-left:15px;
+	height:7px;
+	background:url(images/lsj.png) no-repeat;
+}
+.gc-pl-bj{
+  height:100px;
+  padding: 5px 0 5px 5px;
+	background-color: #d1f6ff;
 }
 .gcfudivtext {
 	width: 148px;
 	height: 45px;
 	float: left;
 	font-size:12px;
+}
+.close_box{
+  float:left;
 }
 .gcfudivbtn {
 	width: 30px;
@@ -982,6 +1001,9 @@ body, div, ul, li, h1, p, input {
 }
 .gcvp-name {
 	color: #0078b6;
+}
+.gcvp-body-min .gcvp-loveit .vp-favor-action{
+  margin:0;
 }
 /*----------------------身份选择*/
 .sfxzvp-body-inner {
@@ -1067,6 +1089,20 @@ body, div, ul, li, h1, p, input {
 	float:left;
 }
 /*----------------------首页*/
+#front .ui-dialog{
+  background-color:#fff;
+	border:1px solid #999999;
+}
+#front .ui-helper-clearfix{
+  height:30px;
+	padding:0 10px;
+	line-height:30px;
+	font-weight:600;
+	background:url(images/loginbj.png);
+}
+#front .ui-dialog-titlebar .ui-dialog-titlebar-close{
+  margin-left:180px;
+}
 .invp-body-min {
 	width: 100%;
 	padding-top:40px;
@@ -1504,7 +1540,7 @@ body, div, ul, li, h1, p, input {
 .tjselectsf {
 	margin-top: 40px;
 	width: 100%;
-	height:390px;
+	height:420px;
 	overflow:hidden;
 	border: 1px solid #000;
 }
@@ -1514,14 +1550,37 @@ body, div, ul, li, h1, p, input {
 	padding-top: 25px;
 	margin: 0 auto;
 }
+.tjbody-right-content .dpright-content-top ul .active{
+  border-bottom:0;
+}
+.tjbody-right-content .dpright-content-top ul  .last-li{
+  width:300px;
+	height:28px;
+  border-top:0;
+	border-right:0;
+	border-left:1px solid #f0f0f0;
+	border-bottom:1px solid #f0f0f0;
+}
 .tjbody-right-content .dpright-content-top ul li{
   display:block;
-	width:10%;
+	width:12%;
+	height:27px;
+	line-height:27px;
 	float:Left;
+	border:1px solid #f0f0f0;
+	border-right:0;
+	text-align:center;
+}
+.tjbody-right-content .dpright-content-top ul li:hover{
+  background-color:#CBF8F1;
+}
+.tjbody-right-content .dpright-content-top ul .last-li:hover{
+  background-color:#fff;
 }
 .tjbody-right-content #vp_recommend_focus{
-  width:100%;
-	height:100%;
+  width:675px;
+	height:365px;
+	overflow:hidden;
 }
 .tjvp-xyb {
 	width: 80px;
@@ -1891,7 +1950,6 @@ fieldset{
 	position:static;
 }
 #front .modal-body {
-  height: 140px;
   padding: 15px;
 }
 
@@ -2087,7 +2145,7 @@ fieldset{
 }
 #comments #edit-sina-vp-open-wrapper{
   width:auto;
-	margin:25px 200px 0 40px;
+	margin:15px 260px 0 0;
 }
 /*-----------------------*卖家*/
 .sellvp-body-min{
@@ -2292,6 +2350,21 @@ fieldset{
   line-height: 30px;
   padding-left: 10px;
 }
+.mjvp-body-center  #edit-sina-vp-open-wrapper{
+  margin: 25px 200px 0 0;
+}
+.mjvp-body-center  #edit-sina-vp-open-wrapper label{
+  text-align:left;
+}
+.mjvp-body-center  #edit-comment-wrapper label{
+  display:none;
+}
+.mjvp-body-center .box h2{
+  display:none;
+}
+.mjvp-conetnt #comment-form #edit-submit{
+  margin:10px 0 0 0;
+}
 /*********************买家注册页*/
 .lightbox-processed #edit-profile-province-wrapper{
   float:left;
@@ -2331,18 +2404,19 @@ fieldset{
 #user-profile-form-4vp #edit-submit{
   margin-left:350px;
 }
+#user-profile-form-4vp{
+  padding-top:30px;
+}
 /*----------------------------------------------*登录*/
 #user-login{
   margin: 0 auto;
-  padding-top: 50px;
-  width: 600px;
 }
 #user-login .captcha{
   margin:0;
 	padding:0;
 }
 #user-login #edit-submit{
-  margin-left:200px;
+  margin:20px 0 0 80px; 
 }
 /*----------------------------------------------*忘记密码*/
 #user-pass{
@@ -2383,7 +2457,9 @@ fieldset{
   margin:20px 0 0 60px;
 }
 .fbvp-body-min  .filefield-upload{
-  display:none;
+  width:1px;
+	height:1px;
+	overflow: hidden;
 }
 .fbvp-body-min #edit-taxonomy-2-wrapper{
   display:none;
@@ -2394,4 +2470,9 @@ fieldset{
 	line-height:25px;
 	padding-left:5px;
 	float:left;
+}
+.vpjnode-maxw{ max-width: 520px;}
+#er_next_sub{display:none;}
+#er_next_step{
+  cursor:pointer;
 }

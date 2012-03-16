@@ -28,6 +28,9 @@
 						}
 					}
 				})
+				$('.fbuploadsize').click(function(){
+					$('.form-file').click();
+				})
 
 			})			
 		</script>
@@ -43,12 +46,25 @@
 		<div class="vp-body">
 		<div class="vp-body-inner"> 
 		  <div class="fbvp-body-min">
-			  <?php if ($show_messages && $messages): print $messages; endif; ?>
+			  <?php 
+				if(!$term = taxonomy_get_term(arg(1))){
+					drupal_set_message('链接请求错误～！','error');//微博分类不正确
+					$donext=FALSE;
+				}elseif($nid=arg(2)){
+					if(!node_load($nid)){
+			  	drupal_set_message('链接请求错误～！','error');//不存在该微博
+					$donext=FALSE;}
+				}
+			  if ($show_messages && $messages): print $messages; endif; ?>
 				<div class="fbissue-title">
+					<?php
+					if(!(arg(1)==5||arg(1)==6)){
+						//发布真人秀和转让潮的时候不让用户选择
+					?>
 					<div class="fbbtitle">
 					<select id="lead_">
-
-						<?php
+						<?php 
+						
 						if(in_array('Seller', $user->roles)){
 						?>
 						<option value="-新品">新品</option>
@@ -57,6 +73,7 @@
 						<option value="-特卖">特卖</option>
 						<?php
 						}elseif(in_array('Buyer', $user->roles)){
+							
 						?>
 						<option value="-转让">转让</option>
 						<option value="-真人秀">真人秀</option>
@@ -64,7 +81,19 @@
 					</select>
 					
 					</div>
-					<div class="fbstitle">请你确认上传的图片是<span class="fbvp-username">@七格格</span> 针织袖</div>
+					<?php }
+						else{ $z_node = node_load(arg(2));
+								$taxonomys = $z_node->taxonomy;
+								if($taxonomys)
+								foreach($taxonomys as $key=>$obj){
+									if($obj->vid==2){
+										$taxonomy_name=$obj->name;
+										$taxonomy_id = 		$obj->tid;	
+									}
+								}
+							?>
+					<div class="fbstitle">请确认您<?php echo arg(1)==5?'转让':'秀';?>的是<span class="fbvp-username"><?php echo l("@$z_node->name","UCenter/0/$z_node->uid")?></span> <?php echo $taxonomy_name;?></div>
+					<?}?>
 			  </div> 
 				<div class="fbuserimg"><img src="/<?php echo path_to_theme()?>/images/6.jpg" alt="" width="220" height="220" /></div>		
 				<div class="fbuploadimg">
@@ -85,13 +114,9 @@
 		<?php print $closure
 		?>
 
-<script type="text/javascript">
-	$().ready(function(){
-			$('.fbuploadsize').click(function(){
-				console.log(123);
-				$('.form-file').click();
-			})
-	})
-</script>
+
+
+
+
 	</body>
 </html>

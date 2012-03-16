@@ -34,8 +34,8 @@ if($node->type=='weibo'){
 				    <div class="mjvp-user-op-ico"></div>
 					<div class="mjlpic">
 					    <div class="mjlpicc">
-							<div class="mjvp-user-op-cz">秀一下</div>
-							<div class="mjvp-user-op-cz">转让</div>
+							<div class="mjvp-user-op-cz"><?php echo l('秀一下',"new/6/$node->nid",array('attributes'=>array('target'=>'_blank')))?></div>
+							<div class="mjvp-user-op-cz"><?php echo l('转让',"new/5/$node->nid",array('attributes'=>array('target'=>'_blank')))?></div>
 						</div>
 					</div>
 				</div>	
@@ -90,7 +90,7 @@ if($node->type=='weibo'){
 																		,$image_link
 																		,array('html'=>TRUE,'attributes'=>array('class'=>'weibo_image_link','target'=>'_blank')));
 													}else{
-															echo theme('imagecache', 'w516', $grey, '', '', array('class'=>'lazy normal-image','data-original'=>'/'.$pic_path),false);														
+															echo theme('imagecache', 'w516', $grey, '', '', array('class'=>'lazy normal-image vpjnode-maxw','data-original'=>'/'.$pic_path),false);														
 													}?>										    
 											 </div>  						
 										</div>
@@ -203,9 +203,29 @@ if($node->type=='weibo'){
 				}
 				//<!--child node end-->
 				?>
-				
+							<?php 
+							if(arg(0)=='node'){
+								?>
+								<div class="mjcontent-info-bottom">
+								<div class="mjcontent-time mjvp-float-time"><?php echo l(sina_vp_time_format($node->created),"node/$node->nid",array('html'=>true));?></div>
+									<div class="mjvp-link">
+										<div class="vp-favor-action">
+											<div class="mjlovepic"><img src="/<?php echo path_to_theme()?>/images/xin.gif"></div>
+											<div class="mjlovexh"><?echo flag_create_link('bookmarks', $node->nid);	?></div>
+										</div>
+										<span class="mjvp-loveit">
+											<a href="#comment-form">点评<?php echo $node->comment_count?></a>
+										</span>
+										<span class="mjvp-loveit">
+											<?php echo l("分享$share_counts","forward/$taxonomy_id/$node->nid"); ?>
+											
+										</span>
+									</div>
+								</div>
+								<?php
+							}else{?>
 	         		<div class="mjcontent-info-bottom">
-								<div class="mjcontent-time mjvp-float-time">12秒前</div>
+								<div class="mjcontent-time mjvp-float-time"><?php echo l(sina_vp_time_format($node->created),"node/$node->nid",array('html'=>true));?></div>
 								<div class="mjvp-link">
 									<div class="vp-favor-action">
 										<div class="mjlovepic"><img src="/<?php echo path_to_theme()?>/images/xin.gif"></div>
@@ -222,6 +242,7 @@ if($node->type=='weibo'){
 						  <div id="Wrap_<?php echo $node->nid?>" class="talkWrap hidden" loading="<?php echo drupal_get_path('module','sina_vp')?>/images/loading.gif" ></div>
 							<div id="Wrap_comment_<?php echo $node->nid?>" class="hidden">Wrap_comment</div>
 							<div id="Wrap_share_<?php echo $node->nid?>" class="hidden">Wrap_share</div>
+							<?}?>
             </div>
 			</div>
             <div class="clear"></div>

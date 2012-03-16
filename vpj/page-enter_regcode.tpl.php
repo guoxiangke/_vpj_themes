@@ -48,7 +48,7 @@ if ($uid) {
 				<div class="ddymts">
 					<?php print $content;?>
 				</div>
-				<div class="ddbtn"><a class="overbtn">完成注册</a></div>
+				<div class="ddbtn" id="er_next_step"><a class="overbtn">下一步</a></div>
 			</div>
 		</div>
     </div>

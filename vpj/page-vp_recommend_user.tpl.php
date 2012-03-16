@@ -18,8 +18,8 @@
 			    threshold : 500
 				});
 				$('.dpright-content-top .nav-tabs li a').click(function(){
-						if($(this).parent().attr('class')=='last-li' || $(this).parent().attr('class')=='active'){	
-						}else{
+					if($(this).parent().attr('class')=='last-li' || $(this).parent().attr('class')=='active'){	
+					}else{
 							//实现toggleClass效果
 							$(this).parent().parent().find('.active').removeClass('active');
 							$(this).parent().addClass('active');
@@ -31,9 +31,10 @@
 							$('#'+flag).fadeIn('fast');
 							$('#'+flag).children('.vp-rec-wrap:first').fadeIn('fast');
 						}
-					})
+				})
 			});
-		</script>
+		</script>	
+		 <script type="text/javascript" src="/<?php echo drupal_get_path('module', 'sina_vp_theme') .'/plugins/bootstrap/js/bootstrap.js'?>"></script>
     <script type="text/javascript" src="/<?php echo drupal_get_path('module', 'sina_vp_theme') .'/plugins/bootstrap/js/bootstrap-tab.js'?>"></script>
     
 		<!--[if lt IE 7]>
@@ -84,8 +85,13 @@
 						<div class="tab-content">
 					
 						  <div class="tab-pane active home vp_recommend_scroll" id="vp_recommend_focus">
-						  <?php	//6X3 被关注最多 订阅最多
-						  		$sql='SELECT `requestee_id` FROM `user_relationships` where `rtid`=2  group by `requestee_id` order by count(1) desc limit 0,18';
+						  <?php	//6X3 被关注最多 订阅最多的买家
+									$sql = 'select u.uid uid from {users} u 
+										INNER JOIN {users_roles} users_roles 
+										ON u.uid = users_roles.uid 
+										INNER JOIN {user_relationships} ur 
+										ON ur.requester_id = u.uid  
+										WHERE  (users_roles.rid = 5) group by u.uid  ORDER BY count(1) desc limit 0,18';		  			
 									$results = db_query($sql);
 					  			$warp_begin ='<div class="vp-rec-wrap">';
 									$warp_end ='<div class="clear"></div>
@@ -93,14 +99,14 @@
 																	<!--span class="vp-recommend"><a href="javascript:void(0)"><<上一批</a></span-->
 																	<a href="javascript:void(0)">换一批>></a>
 																</div>
-																<div class="tjvp-xyb">'.l('下一步','vp_recommend_user').'</div>
+																<div class="tjvp-xyb">'.l('下一步','UCenter').'</div>
 															</div>';
 									$count =1;//1--18
 									$count2 = 3;//换3批
 									while($count<=18){//
 										$row = db_fetch_array($results);
-										if($row['requestee_id']){
-											$account = user_load($row['requestee_id']);		
+										if($row['uid']){
+											$account = user_load($row['uid']);		
 											if($account->picture==''){$account->picture=variable_get(user_picture_default, '/sites/default/files/users/0.gif');}
 											$output.='<div class="dpdianpu-content odd">
 															<div class="dpdianpu-pic">'.
@@ -118,7 +124,7 @@
 																if(count($my_follows)){
 																	$follow_status=1; //已关注	
 																}
-															 $options = sina_vp_follow_toggle_options($option='focus');
+															 $options = sina_vp_follow_toggle_options($option='follow');
 											         if($account->uid<>$user->uid && !in_array('Seller',$user->roles)){		//卖家查看卖家/自己，不可进行粉丝操作。 			
 																$output.='<span class="focus-action focus-status focus-action-do">';
 																foreach (array_keys($options) as $key) {
@@ -154,8 +160,10 @@
 								  
 							<div class="tab-pane profile vp_recommend_scroll" id="vp_recommend_new">...
 								<?php	//6X3
-									$sql='select u.uid uid from users u  INNER JOIN users_roles users_roles ON u.uid = users_roles.uid
-	 								WHERE (users_roles.rid = 3) AND (u.status <> 0) order by created desc';//最新加入
+									$sql = 'select u.name,u.uid,u.picture from {users} u 
+					INNER JOIN {users_roles} users_roles 
+					ON u.uid = users_roles.uid  
+					WHERE  (users_roles.rid = 5) AND u.status=1  AND u.picture<>""  ORDER BY u.created DESC limit 0,18';//
 									$results = db_query($sql);
 					  			$warp_begin ='<div class="vp-rec-wrap">';
 									$warp_end ='<div class="clear"></div>
@@ -163,7 +171,7 @@
 																	<!--span class="vp-recommend"><a href="javascript:void(0)"><<上一批</a></span-->
 																	<a href="javascript:void(0)">换一批>></a>
 																</div>
-																<div class="tjvp-xyb">'.l('下一步','vp_recommend_user').'</div>
+																<div class="tjvp-xyb">'.l('下一步','UCenter').'</div>
 															</div>';
 									$count =1;//1--18
 									$count2 = 3;//换3批
@@ -188,7 +196,7 @@
 																if(count($my_follows)){
 																	$follow_status=1; //已关注	
 																}
-															 $options = sina_vp_follow_toggle_options($option='focus');
+															 $options = sina_vp_follow_toggle_options($option='follow');
 											         if($account->uid<>$user->uid && !in_array('Seller',$user->roles)){		//卖家查看卖家/自己，不可进行粉丝操作。 			
 																$output.='<span class="focus-action focus-status focus-action-do">';
 																foreach (array_keys($options) as $key) {
@@ -225,7 +233,7 @@
 						  <div class="tab-pane messages vp_recommend_scroll" id="vp_recommend_active">...
 						  <?php	//6X3 最近更新 最活跃的
 					  			$sql='select n.uid uid from node n  INNER JOIN users_roles users_roles ON n.uid = users_roles.uid
- WHERE (users_roles.rid = 3)  group by n.uid order by count(1) desc';
+ WHERE (users_roles.rid = 5)  group by n.uid order by count(1) desc';
 									$results = db_query($sql);
 					  			$warp_begin ='<div class="vp-rec-wrap">';
 									$warp_end ='<div class="clear"></div>
@@ -233,7 +241,7 @@
 																	<!--span class="vp-recommend"><a href="javascript:void(0)"><<上一批</a></span-->
 																	<a href="javascript:void(0)">换一批>></a>
 																</div>
-																<div class="tjvp-xyb">'.l('下一步','vp_recommend_user').'</div>	
+																<div class="tjvp-xyb">'.l('下一步','UCenter').'</div>	
 															</div>';
 									$count =1;//1--18
 									$count2 = 3;//换3批
@@ -258,7 +266,7 @@
 																if(count($my_follows)){
 																	$follow_status=1; //已关注	
 																}
-															 $options = sina_vp_follow_toggle_options($option='focus');
+															 $options = sina_vp_follow_toggle_options($option='follow');
 											         if($account->uid<>$user->uid && !in_array('Seller',$user->roles)){		//卖家查看卖家/自己，不可进行粉丝操作。 			
 																$output.='<span class="focus-action focus-status focus-action-do">';
 																foreach (array_keys($options) as $key) {

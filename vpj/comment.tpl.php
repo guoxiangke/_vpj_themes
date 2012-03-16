@@ -42,11 +42,12 @@
 						<div class="mjvp-content-child-news-nr">
 						    <div class="mjcontent-child-news-nr-img">
 								<?php  // width="50" height="50"									
-									$grey = drupal_get_path('module', 'sina_vp_imagetool').'/images/grey.gif';
+									$grey = drupal_get_path('module', 'sina_vp_imagetool').'/images/grey.gif';									
+									if(!$comment->picture)$comment->picture=variable_get(user_picture_default, '/sites/default/files/users/0.gif');
 									imagecache_generate_image('35x35',  $comment->picture);
 									$path = imagecache_create_path('35x35', $comment->picture);
 									//print theme('imagecache', 'preset_namespace', $image_filepath, $alt, $title, $attributes);
-					      	echo  theme('imagecache', '35x35', $grey, '', '', array('class'=>'lazy','data-original'=>'/'.$path),false) ;
+					      	echo  theme('imagecache', '35x35', $path, '', '', array('class'=>'comment-u-pic'),false) ;
 								?>
 							</div>
 							<div class="mjcontent-child-news-nr-body">

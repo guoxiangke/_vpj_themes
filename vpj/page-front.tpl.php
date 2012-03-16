@@ -63,7 +63,24 @@
     			$('#loginModal').modal('hide')
     		}); 
     
-    $('.login_link').attr('data-toggle','modal').attr('href','#loginModal');
+												
+   // $('.login_link').attr('data-toggle','modal').attr('href','#loginModal');
+   $("#loginModal").dialog({   
+		        autoOpen: false,   
+		        draggable: true,
+		        modal: true, 
+		        title: '请您登录',
+			});
+		$("#edit-vpj-register-links").click(function(){
+				
+				window.location='/?q=enter_regcode';
+		});
+    $('.login_link').click(function(e){
+			e.preventDefault();//阻止默认提交
+    	console.log('click');
+    	$("#loginModal").dialog("open");
+    	$("#edit-submit").show();
+    });
     	}
     </script>
   </head>

@@ -16,7 +16,8 @@
 	   <?php include(path_to_theme().'/vp_page-top.tpl.php');?>
 	</div>
 <div class="vp_content">
-	<?php  if( $messages ) : ?>
+	<?php
+	if( $messages ) : ?>
 	<div class="messages status">
 	<?php print $messages; ?>
 	</div>

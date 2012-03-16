@@ -26,7 +26,7 @@
 			    <div class="user-img">
 			    	<?php
 			    				if(!$user->picture)
-										$user->picture = variable_get(user_picture_default, '/sites/default/files/users/0.gif');
+									$user->picture = variable_get(user_picture_default, '/sites/default/files/users/0.gif');
 									imagecache_generate_image('35x35',  $user->picture);
 									$pic_path = imagecache_create_path('35x35', $user->picture);
 									

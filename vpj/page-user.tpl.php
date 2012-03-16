@@ -36,8 +36,8 @@ if ($uid) {
 						<?php print $messages;?>
 					</div>
 					<?php endif;?>
-					<?php if ($tabs): print '<ul class="tabs primary">'. $tabs .'</ul>'; endif; ?>
-					<?php if ($tabs2): print '<ul class="tabs secondary">'. $tabs2 .'</ul>'; endif; ?>
+					<?php //if ($tabs): print '<ul class="tabs primary">'. $tabs .'</ul>'; endif; ?>
+					<?php //if ($tabs2): print '<ul class="tabs secondary">'. $tabs2 .'</ul>'; endif; ?>
 					<div class="clear-block">
 						<?php print $content ?>
 					</div>

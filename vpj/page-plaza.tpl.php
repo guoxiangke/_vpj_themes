@@ -24,7 +24,7 @@
 			  <?php if ($show_messages && $messages): print $messages; endif; ?>
 		    <div class="gcvp-body-left">
 			    <div class="gcvp-sidebar">
-				    <div class="gcvp-nav gcvp-nav-active" p-type="Show"><?php echo l('真人秀','plaza/Show');?></div>
+				    <div class="gcvp-nav" p-type="Show"><?php echo l('真人秀','plaza/Show');?></div>
 						<div class="gcvp-subnav">
 						  <p class="gcsubnav-color"><?php echo l('喜欢最多','plaza/Show/most_favor');?></p>
 							<p><?php echo l('点评最多','plaza/Show/most_comments');?></p>
