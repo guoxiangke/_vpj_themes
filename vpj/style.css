@@ -304,18 +304,21 @@ body, div, ul, li, h1, p, input {
 	padding-bottom:10px;
 }
 .mjvp-context-image {
-	padding: 20px 10px;
+	padding: 20px;
 	float: left;
+}
+.mjvp-context .status-box{
+  width:540px;
 }
 .mjvp-context-image-bk {
 	margin-right: 5px;
 	float: left;
 }
 .mjcontent-info-bottom-child {
-	padding: 10px 10px 10px 10px;
-	width: 500px;
+	padding: 10px;
+	width:518px;
 	float: left;
-	width: }
+}
 	.mjchild-node{
 	width: 538px;
 	float: left;
@@ -509,23 +512,32 @@ body, div, ul, li, h1, p, input {
 }
 .mjfollow-block-body {
 	font-size: 12px;
-	padding: 10px 0 0 10px;
 }
 .mjfollow-block-body-inner {
 	float: left;
-	margin-right: 32px;
+    padding:10px 10px 0 13px;
 }
 .mjfollow-block-body-img {
-	width: 35px;
-	height: 35px;
+	width: 50px;
+	height: 50px;
 	overflow:hidden;
 }
 .mjfollow-block-body-size {
-	padding-top: 5px;
-	width:37px;
+	padding-top: 10px;
+	width:50px;
 	height:15px;
+	text-align:center;
 	overflow:hidden;
 	color: #0078b6;
+}
+.mjfollow-block .show_more_follows{
+    width:100%;
+	text-align:right;
+	margin-top:10px;
+}
+.mjfollow-block .show_more_follows p a{
+    font-size:12px;
+	color:#999999;
 }
 .mjrecommend-block {
 	margin-top: 15px;
@@ -679,7 +691,6 @@ body, div, ul, li, h1, p, input {
 	height: 15px;
 }
 .dpdianpu-dy {
-	width: 60px;
 	float: left;
 	margin-left: 35px;
 	color: #426489;
@@ -703,7 +714,7 @@ body, div, ul, li, h1, p, input {
 }
 
 .dpdianpu-dy .focus-action-do{
-  width:58px;
+    min-width:58px;
 	height:20px;
 	background-color:#cbf8f1;
 	border:1px solid #b4edfe;
@@ -789,6 +800,8 @@ body, div, ul, li, h1, p, input {
 	padding-top: 10px;
 }
 /*----------------------广场*/
+.gcvp-subnav{display:none}
+.gcfudiv{display:none}
 .gcvp-body-min {
 	width: 100%;
 	padding: 30px 0 0 15px;
@@ -1089,9 +1102,17 @@ body, div, ul, li, h1, p, input {
 	float:left;
 }
 /*----------------------首页*/
+.ui-widget-overlay{
+   position:absolute;
+   top:0;
+   left:0;
+   background-color:#000;
+   background:url(images/touming.png);
+   opacity:0.5;
+}
 #front .ui-dialog{
   background-color:#fff;
-	border:1px solid #999999;
+  border:1px solid #999999;
 }
 #front .ui-helper-clearfix{
   height:30px;
@@ -1106,6 +1127,22 @@ body, div, ul, li, h1, p, input {
 .invp-body-min {
 	width: 100%;
 	padding-top:40px;
+}
+.invp-body-min #edit-remember-me-1-wrapper .option{
+  display:block;
+  text-align:left;
+  color:#26A2DA;
+  margin-top:11px;
+  line-height:normal;
+  width:100%;
+}
+
+.invp-body-min #user-login-form #edit-remember-me-1-wrapper{
+  width:80px;
+  float:none;
+}
+.invp-body-min #user-login-form .sina_open_login_links img{
+  margin-top:7px;
 }
 .vp-body-left {
 	width: 650px;
@@ -1132,6 +1169,9 @@ body, div, ul, li, h1, p, input {
 	height: 50px;
 	overflow: hidden;
 	cursor: pointer;
+}
+.invp-body-min #outCont{
+  border-top:2px solid #999999;
 }
 /*
  .invp-user-op{
@@ -1221,6 +1261,8 @@ body, div, ul, li, h1, p, input {
 }
 #block-user-0 {
 	width: 100%;
+	height:220px;
+	overflow:hidden;
 }
 .vp-login {
 	width: 100%;
@@ -1279,7 +1321,6 @@ body, div, ul, li, h1, p, input {
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 .item-list {
-	margin-top: 10px;
 	float:left;
 }
 .inautolg {
@@ -1317,12 +1358,11 @@ body, div, ul, li, h1, p, input {
 }
 #block-block-2 {
 	width: 100%;
-	margin-top: 30px;
-	height:300px;
+	margin-top: 15px;
 	overflow:hidden;
 }
 #block-block-2 h2{
-  font-size:14px;
+    font-size:14px;
 	height: 30px;
 	color: #999999;
 	background-color: #f0f0f0;
@@ -1336,8 +1376,8 @@ body, div, ul, li, h1, p, input {
 	padding-left:5px;
 }
 .infollow-block-body-inner {
-  width:70px;
-	height:70px;
+    width:70px;
+	height:80px;
 	overflow:hidden;
 	padding-top: 10px;
 	float: left;
@@ -1350,13 +1390,14 @@ body, div, ul, li, h1, p, input {
   padding-left:10px;
 }
 .infollow-block-body-inner p{
-  display:block;
+    display:block;
 	width:100%;
 	height:15px;
 	overflow: hidden;
 	color: #0078b6;
 	text-align: center;
 	font-size:12px;
+	margin-top:8px;
 }
 .infollow-block-body-inner2 {
 	padding-top: 10px;
@@ -1590,6 +1631,9 @@ body, div, ul, li, h1, p, input {
 	text-align: center;
 	color: #fff;
 	background-color: #00cbff;
+}
+.tjvp-xyb a{
+  color:#fff;
 }
 /*----------------------等待页面*/
 .ddym{
@@ -1921,10 +1965,10 @@ fieldset{
   background-color:#00b6e5;
 	background-image: -moz-linear-gradient(center top , #00b6e5, #0084a6);
 }
-#front input[type="text"]:focus,input[type="password"]:focus{
+#front input[type="text"]:focus,#front  input[type="password"]:focus{
    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
    border-color: #00cbff;
-	 outline:0 none;
+   outline:0 none;
 }
 /*-------------------------------------*/
 #edit-name-wrapper{
@@ -2042,20 +2086,61 @@ fieldset{
 	width:100%;
 	float:left;
 	padding:10px 0px;
-	border-bottom:1px solid #e1e4e5;
+}
+.vp-contents .privatemsg_R .pm-message-picture{
+    float:right;
+}
+.vp-contents .privatemsg-content{
+    padding:8px;
+	border-radius:10px;
+    border:1px solid #e1e4e5;
+	position:relative;
+}
+.vp-contents .privatemsg_R .privatemsg-content_R{
+    float:left;
+	margin-left: 90px;
+    width: 70%;
+}
+.vp-contents .privatemsg_R .privatemsg-content_R .R_msg{
+  float:left;
+  width:100%;
+}
+.vp-contents .privatemsg_R .privatemsg-content_R  .arrow{
+  font-size:20px;
+  color:#e1e4e5;
+  position:absolute;
+  right:-13px;
+}
+.vp-contents .privatemsg_L .privatemsg-content_L{
+  float:left;
+  width:70%;
+  margin-left:40px;
+  background-color:#f0f0f0;
+}
+.vp-contents .privatemsg_L .privatemsg-content_L .L_msg{
+  float:left;
+  width:100%;
+}
+.vp-contents .privatemsg_L .privatemsg-content_L .arrow{
+  font-size:20px;
+  color:#e1e4e5;
+  position:absolute;
+  left:-13px;
 }
 .pm-message-picture {
 	float:left;
 	width:auto;
-	margin-right:10px;
 }
 .pm-message-content {
 	width:604px;
 	float:left;
 }
+.pm-message-text{
+  line-height:20px;
+}
 .pm-message-info {
 	font-size:12px;
-	padding-top:5px;
+	padding-top:18px;
 }
 .pm-message-time {
 	color:#b9b9b9;
@@ -2147,7 +2232,25 @@ fieldset{
   width:auto;
 	margin:15px 260px 0 0;
 }
+.mjvp-contents .pager .last{
+  width:auto;
+  margin-top:0;
+}
 /*-----------------------*卖家*/
+.sell-zrx-xx {
+  position:relative;
+}
+.sellvp-body-min .sell-zrx-xx .gcfudiv{
+  left: -18px;
+  top: 130px;
+}
+.sellvp-body-min .gcfudiv{
+  top:95px;
+  left:-3px;
+}
+.sellvp-body-min .vp-favor-action{
+  margin-left:0;
+}
 .sellvp-body-min{
   padding-top:40px;
 }
@@ -2211,7 +2314,6 @@ fieldset{
 	height:140px;
 	padding-right:10px;
 	float:left;
-	overflow:hidden;
 }
 .huopaoleft{
   margin-left:10px;
@@ -2248,7 +2350,8 @@ fieldset{
 }
 .sellhuonr{
   float:left;
-	padding-left:15px;
+  padding-left:15px;
+  position:relative;
 }
 .sellhuobody{
   width:205px;
@@ -2269,9 +2372,8 @@ fieldset{
 	padding-top:15px;
 }
 .sell-zrx{
-  width:325px;
+    width:325px;
 	height:177px;
-	overflow:hidden;
 	float:Left;
 	padding:0 10px;
 	border-top:1px solid #f0f0f0;
@@ -2282,7 +2384,6 @@ fieldset{
 .sell-zrxbody{
   width:100%;
 	height:140px;
-	overflow:hidden;
 }
 .sell-zrx-xx{
 	float:left;
@@ -2384,7 +2485,15 @@ fieldset{
 }
 .lightbox-processed #edit-profile-province-wrapper #edit-profile-province{
   width:70px;
-	height:25px;
+  height:25px;
+}
+.VCenter #edit-profile-province-wrapper #edit-profile-province{
+  width:70px;
+  height:25px;
+}
+.VCenter #edit-profile-province-wrapper #edit-profile-city{
+  width:70px;
+  height:25px;
 }
 .lightbox-processed #edit-profile-city-wrapper #edit-profile-city{
   width:70px;
@@ -2406,6 +2515,11 @@ fieldset{
 }
 #user-profile-form-4vp{
   padding-top:30px;
+}
+#edit-regcode-code-1-wrapper .edit-regcode-code-1 {
+  width:250px;
+  height:25px;
+  line-height:25px;
 }
 /*----------------------------------------------*登录*/
 #user-login{

@@ -45,8 +45,8 @@
 });
    
 				$('.login_link').click(function(){
-    			$( "#user-login" ).dialog("open");
-    			console.log('click');
+    			$( "#user-login" ).dialog({modal: true, draggable: false});
+				$("#edit-name").focus();
     			return false;
     		});  */ 
     		
@@ -77,8 +77,7 @@
 		});
     $('.login_link').click(function(e){
 			e.preventDefault();//阻止默认提交
-    	console.log('click');
-    	$("#loginModal").dialog("open");
+    	$("#loginModal").dialog("open").resizable();;
     	$("#edit-submit").show();
     });
     	}

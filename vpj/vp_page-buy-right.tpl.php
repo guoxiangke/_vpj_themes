@@ -90,7 +90,7 @@ if((arg(0)=='Comments')&&is_numeric(arg(2))){
 						<div class="mjfollow-block-body-inner">
 							<div class="mjfollow-block-body-img">
 								<?php
-									echo l(theme('imagecache', '35x35', $account_realtionship->picture, '', $account_realtionship->name, 
+									echo l(theme('imagecache', '50x50', $account_realtionship->picture, '', $account_realtionship->name, 
 													array('class'=>'vp-user-picture')),"UCenter/0/$account_realtionship->uid",
 													array('html'=>TRUE,'attributes'=>array('class'=>'vp-node-picture-link')));
 								?>								
@@ -105,14 +105,16 @@ if((arg(0)=='Comments')&&is_numeric(arg(2))){
 							
 						?>	
 						<div class="mjfollow-block-body-inner">
-							<div class="mjfollow-block-body-img"><img src="<?php echo path_to_theme();?>/images/5.jpg" width="35" height="35"/>
+							<div class="mjfollow-block-body-img"><img src="<?php echo path_to_theme();?>/images/5.jpg" width="50" height="50"/>
 							</div>
 							<div class="mjfollow-block-body-size">
 								蔡卓研
 							</div>
 						</div>
 						<?}?>
+						<div class="clear"></div>
 					</div>
+					<div class="show_more_follows"><p><?php echo l('更多>>','more')?></p></div>
 				</div>
 				<div class="mjrecommend-block">
 					<div class="mjrecommend-block-head">

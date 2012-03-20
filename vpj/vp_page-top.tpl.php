@@ -31,7 +31,7 @@
 									$pic_path = imagecache_create_path('35x35', $user->picture);
 									
 									//print theme('imagecache', 'preset_namespace', $image_filepath, $alt, $title, $attributes);
-					      	echo  theme('imagecache', '35x35', $pic_path, $user->name, '') ; //title alt
+					      	echo  l(theme('imagecache', '35x35', $pic_path, $user->name, ''),"UCenter",array('html'=>true)) ; //title alt
 			    	?>
 			    </div>
 				<div class="user-name"><p><?php echo $user->name;?>&nbsp;</p><img src="/<?php echo path_to_theme()?>/images/sajiao.png" /></div>

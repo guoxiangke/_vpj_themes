@@ -1,10 +1,4 @@
 <?php
- if($uid=arg(2)){//其他人访问的买家页面 UCenter/0/3
-		$account=user_load($uid);
-		if($page_uid=$account->uid){
-			//存在被访问用户
-		}else{$account=$user;}
-	}else{$account=$user;}
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language ?>" lang="<?php print $language->language ?>" dir="<?php print $language->dir ?>">
@@ -142,23 +136,37 @@
 												echo l("分享$share_counts","forward/$taxonomy_id/$activity_node->nid",array('attributes'=>array('class'=>'Seller-Sell-forward')));
 											?>
 										</div>
+										<!--BEGIN COMMENTS -->
+										<div class="gcfudiv">
+		             			<div class="gc-pl-sanjiao"></div>
+			             		<div class="gc-pl-bj">
+												<div class="gcfudiv-top">
+													<textarea value="求点评^_^" name="textarea" class="gcfudivtext" cols="10" rows="2">求点评^_^</textarea>
+													<a style="text-decoration:none; font-color:black;position:absolute; margin-left:-10px;" class="close_box" href="javascript:void(0)">x</a>
+													<input type="button" class="gcfudivbtn" value="点评">
+													<div class="hidden">
+														<div class="box">
+													  <h2>点评</h2>
+													  <div class="content">FORM BIAODAN
+														</div>
+														</div>
+													</div>
+													<div class="clear"></div>
+												</div>
+											 	<div class="gcfudiv-bottom">
+														<img width="35" height="35" class="hideMe" title="" alt="" src="http://dev.weipujie.com/?q=sites/default/files/imagecache/35x35/imagecache/35x35/users/picture-51.jpg">	<p><span class="gcvp-name">威海小K：</span>asdfadfadfadf</p>
+														<div class="clear"></div>
+			             			</div>
+		             		</div>
+	             		</div>
+										<!--END COMMENTS-->
 									</div>
 									<div class="clear"></div>
 								</div>
 								<?}else{echo'暂无内容';}?>
 							</div>
 							<!--left-->
-								<div class="gcfudiv" >
-									<div class="gcfudiv-top">
-										<input type="text" class="gcfudivtext"><a href="#" class="close_box" style="text-decoration:none; font-color:black;position:absolute;">x</a>
-										<div class="clear"></div>
-									</div>
-									<div class="gcfudiv-bottom">
-										<img src="images/5.jpg" class="hideMe" width="35" height="35"/>
-										<p><span class="gcvp-name">小精灵：</span>我觉的点点衣服好看看年年</p>
-										<div class="clear"></div>
-									</div>			
-								</div>	
+									
 							<div class="sellhuo huopaoright">
 							  <div class="sellhuo-title">
 								  <p>爆款</p>
@@ -217,23 +225,36 @@
 												echo l("分享$share_counts","forward/$taxonomy_id/$activity_node->nid",array('attributes'=>array('class'=>'Seller-Sell-forward')));
 											?>
 										</div>
+										<!--BEGIN COMMENTS -->
+										<div class="gcfudiv">
+		             			<div class="gc-pl-sanjiao"></div>
+			             		<div class="gc-pl-bj">
+												<div class="gcfudiv-top">
+													<textarea value="求点评^_^" name="textarea" class="gcfudivtext" cols="10" rows="2">求点评^_^</textarea>
+													<a style="text-decoration:none; font-color:black;position:absolute; margin-left:-10px;" class="close_box" href="javascript:void(0)">x</a>
+													<input type="button" class="gcfudivbtn" value="点评">
+													<div class="hidden">
+														<div class="box">
+													  <h2>点评</h2>
+													  <div class="content">FORM BIAODAN
+														</div>
+														</div>
+													</div>
+													<div class="clear"></div>
+												</div>
+											 	<div class="gcfudiv-bottom">
+														<img width="35" height="35" class="hideMe" title="" alt="" src="http://dev.weipujie.com/?q=sites/default/files/imagecache/35x35/imagecache/35x35/users/picture-51.jpg">	<p><span class="gcvp-name">威海小K：</span>asdfadfadfadf</p>
+														<div class="clear"></div>
+			             			</div>
+		             		</div>
+	             		</div>
+										<!--END COMMENTS-->
 									</div>
 									<div class="clear"></div>
 								</div>
 								<?}else{echo'暂无内容';}?>
 							</div>
 									<!--right-->
-								<div class="gcfudiv" >
-									<div class="gcfudiv-top">
-										<input type="text" class="gcfudivtext"><a href="#" class="close_box" style="text-decoration:none; font-color:black;position:absolute;">x</a>
-										<div class="clear"></div>
-									</div>
-									<div class="gcfudiv-bottom">
-										<img src="images/5.jpg" class="hideMe" width="35" height="35"/>
-										<p><span class="gcvp-name">小精灵：</span>我觉的点点衣服好看看年年</p>
-										<div class="clear"></div>
-									</div>			
-								</div>	
 							<div class="clear"></div>
 						</div>
 						<div class="sell-ztxz">
@@ -295,20 +316,32 @@
 											<?php echo l("点评($activity_node->comment_count)","node/$activity_node->nid/",array('fragment'=>'comment-form','attributes'=>array('class'=>'Seller-Sell-forward')));?>
 											</div>
 										</div>
-									</div>
-										<!--here-->
-											<div class="gcfudiv" >
+										
+										<!--BEGIN COMMENTS -->
+										<div class="gcfudiv">
+		             			<div class="gc-pl-sanjiao"></div>
+			             		<div class="gc-pl-bj">
 												<div class="gcfudiv-top">
-													<input type="text" class="gcfudivtext"><a href="#" class="close_box" style="text-decoration:none; font-color:black;position:absolute;">x</a>
+													<textarea value="求点评^_^" name="textarea" class="gcfudivtext" cols="10" rows="2">求点评^_^</textarea>
+													<a style="text-decoration:none; font-color:black;position:absolute; margin-left:-10px;" class="close_box" href="javascript:void(0)">x</a>
+													<input type="button" class="gcfudivbtn" value="点评">
+													<div class="hidden">
+														<div class="box">
+													  <h2>点评</h2>
+													  <div class="content">FORM BIAODAN
+														</div>
+														</div>
+													</div>
 													<div class="clear"></div>
 												</div>
-												<div class="gcfudiv-bottom">
-													<img src="images/5.jpg" class="hideMe" width="35" height="35"/>
-													<p><span class="gcvp-name">小精灵：</span>我觉的点点衣服好看看年年</p>
-													<div class="clear"></div>
-												</div>			
-											</div>	
-										<!--end-->
+											 	<div class="gcfudiv-bottom">
+														<img width="35" height="35" class="hideMe" title="" alt="" src="http://dev.weipujie.com/?q=sites/default/files/imagecache/35x35/imagecache/35x35/users/picture-51.jpg">	<p><span class="gcvp-name">威海小K：</span>asdfadfadfadf</p>
+														<div class="clear"></div>
+			             			</div>
+		             		</div>
+	             		</div>
+										<!--END COMMENTS-->
+									</div>
 									<?}} if($count==0){echo '还没有秀呢!';}?>
 									<div class="clear"></div>
 								</div>
@@ -371,20 +404,32 @@
 											<?php echo l("点评($activity_node->comment_count)","node/$activity_node->nid/",array('fragment'=>'comment-form','attributes'=>array('class'=>'Seller-Sell-forward')));?>
 											</div>
 										</div>
-									</div>
-										<!--here-->
-											<div class="gcfudiv" >
+										
+										<!--BEGIN COMMENTS -->
+										<div class="gcfudiv">
+		             			<div class="gc-pl-sanjiao"></div>
+			             		<div class="gc-pl-bj">
 												<div class="gcfudiv-top">
-													<input type="text" class="gcfudivtext"><a href="#" class="close_box" style="text-decoration:none; font-color:black;position:absolute;">x</a>
+													<textarea value="求点评^_^" name="textarea" class="gcfudivtext" cols="10" rows="2">求点评^_^</textarea>
+													<a style="text-decoration:none; font-color:black;position:absolute; margin-left:-10px;" class="close_box" href="javascript:void(0)">x</a>
+													<input type="button" class="gcfudivbtn" value="点评">
+													<div class="hidden">
+														<div class="box">
+													  <h2>点评</h2>
+													  <div class="content">FORM BIAODAN
+														</div>
+														</div>
+													</div>
 													<div class="clear"></div>
 												</div>
-												<div class="gcfudiv-bottom">
-													<img src="images/5.jpg" class="hideMe" width="35" height="35"/>
-													<p><span class="gcvp-name">小精灵：</span>我觉的点点衣服好看看年年</p>
-													<div class="clear"></div>
-												</div>			
-											</div>	
-										<!--end-->
+											 	<div class="gcfudiv-bottom">
+														<img width="35" height="35" class="hideMe" title="" alt="" src="http://dev.weipujie.com/?q=sites/default/files/imagecache/35x35/imagecache/35x35/users/picture-51.jpg">	<p><span class="gcvp-name">威海小K：</span>asdfadfadfadf</p>
+														<div class="clear"></div>
+			             			</div>
+		             		</div>
+	             		</div>
+										<!--END COMMENTS-->
+									</div>
 									<?}} if($count==0){echo '还没有转让潮!';}?>
 									<div class="clear"></div>
 								</div>
@@ -436,20 +481,32 @@
 														<?php echo l("点评($activity_node->comment_count)","node/$activity_node->nid/",array('fragment'=>'comment-form','attributes'=>array('class'=>'Seller-Sell-forward')));?>
 														</div>
 													</div>
+													
+														<!--BEGIN COMMENTS -->
+														<div class="gcfudiv">
+						             			<div class="gc-pl-sanjiao"></div>
+							             		<div class="gc-pl-bj">
+																<div class="gcfudiv-top">
+																	<textarea value="求点评^_^" name="textarea" class="gcfudivtext" cols="10" rows="2">求点评^_^</textarea>
+																	<a style="text-decoration:none; font-color:black;position:absolute; margin-left:-10px;" class="close_box" href="javascript:void(0)">x</a>
+																	<input type="button" class="gcfudivbtn" value="点评">
+																	<div class="hidden">
+																		<div class="box">
+																	  <h2>点评</h2>
+																	  <div class="content">FORM BIAODAN
+																		</div>
+																		</div>
+																	</div>
+																	<div class="clear"></div>
+																</div>
+															 	<div class="gcfudiv-bottom">
+																		<img width="35" height="35" class="hideMe" title="" alt="" src="http://dev.weipujie.com/?q=sites/default/files/imagecache/35x35/imagecache/35x35/users/picture-51.jpg">	<p><span class="gcvp-name">威海小K：</span>asdfadfadfadf</p>
+																		<div class="clear"></div>
+							             			</div>
+						             		</div>
+					             		</div>
+														<!--END COMMENTS-->
 												</div>
-										<!--here-->
-											<div class="gcfudiv" >
-												<div class="gcfudiv-top">
-													<input type="text" class="gcfudivtext"><a href="#" class="close_box" style="text-decoration:none; font-color:black;position:absolute;">x</a>
-													<div class="clear"></div>
-												</div>
-												<div class="gcfudiv-bottom">
-													<img src="images/5.jpg" class="hideMe" width="35" height="35"/>
-													<p><span class="gcvp-name">小精灵：</span>我觉的点点衣服好看看年年</p>
-													<div class="clear"></div>
-												</div>			
-											</div>	
-										<!--end-->
 												<?php
 											}
 									}}else{
@@ -507,20 +564,32 @@
 														<?php echo l("点评($activity_node->comment_count)","node/$activity_node->nid/",array('fragment'=>'comment-form','attributes'=>array('class'=>'Seller-Sell-forward')));?>
 														</div>
 													</div>
+													
+													<!--BEGIN COMMENTS -->
+													<div class="gcfudiv">
+					             			<div class="gc-pl-sanjiao"></div>
+						             		<div class="gc-pl-bj">
+															<div class="gcfudiv-top">
+																<textarea value="求点评^_^" name="textarea" class="gcfudivtext" cols="10" rows="2">求点评^_^</textarea>
+																<a style="text-decoration:none; font-color:black;position:absolute; margin-left:-10px;" class="close_box" href="javascript:void(0)">x</a>
+																<input type="button" class="gcfudivbtn" value="点评">
+																<div class="hidden">
+																	<div class="box">
+																  <h2>点评</h2>
+																  <div class="content">FORM BIAODAN
+																	</div>
+																	</div>
+																</div>
+																<div class="clear"></div>
+															</div>
+														 	<div class="gcfudiv-bottom">
+																	<img width="35" height="35" class="hideMe" title="" alt="" src="http://dev.weipujie.com/?q=sites/default/files/imagecache/35x35/imagecache/35x35/users/picture-51.jpg">	<p><span class="gcvp-name">威海小K：</span>asdfadfadfadf</p>
+																	<div class="clear"></div>
+						             			</div>
+					             		</div>
+				             		</div>
+													<!--END COMMENTS-->
 												</div>
-										<!--here-->
-											<div class="gcfudiv" >
-												<div class="gcfudiv-top">
-													<input type="text" class="gcfudivtext"><a href="#" class="close_box" style="text-decoration:none; font-color:black;position:absolute;">x</a>
-													<div class="clear"></div>
-												</div>
-												<div class="gcfudiv-bottom">
-													<img src="images/5.jpg" class="hideMe" width="35" height="35"/>
-													<p><span class="gcvp-name">小精灵：</span>我觉的点点衣服好看看年年</p>
-													<div class="clear"></div>
-												</div>			
-											</div>	
-										<!--end-->
 												<?php
 											}
 									}}else{

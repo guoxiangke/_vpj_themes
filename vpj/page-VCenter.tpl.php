@@ -11,6 +11,15 @@
 		<!--[if lt IE 7]>
 		<?php print phptemplate_get_ie_styles(); ?>
 		<![endif]-->
+		<script type='text/javascript'>
+			$().ready(function(){
+				//广场 推荐 订阅全部
+				$('.dpdybtn').one('click',function(){
+					$(this).parent().parent().parent().find('.fasttoggle-status-user-focus-0').click();
+					$(this).attr('disabled','disabled');
+				});
+			})
+		</script>
 	</head>
 	<body>
 		<div id="header-region" class="vp-clear-block">

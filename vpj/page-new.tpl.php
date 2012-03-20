@@ -18,7 +18,7 @@
 		</style>
 		<script type="text/javascript">
 			$().ready(function(){
-				
+				//顶部选择
 				$('#lead_').change(function(){	
 					var topic=$(this).val();
 					var selectBar=document.getElementById('edit-taxonomy-2');
@@ -31,6 +31,15 @@
 				$('.fbuploadsize').click(function(){
 					$('.form-file').click();
 				})
+				//2012年3月19日 上传缩略图更改显示位置
+				/**
+				*上传的图片显示（onLoad）的同时，截取src赋值到顶部图片显示区域
+				*/
+				var image_display_flag=$('.imagefield-preview img');
+				if(image_display_flag.attr('src').length>10){
+					console.log('The Image Loaded');
+				}
+
 
 			})			
 		</script>
@@ -58,7 +67,7 @@
 			  if ($show_messages && $messages): print $messages; endif; ?>
 				<div class="fbissue-title">
 					<?php
-					if(!(arg(1)==5||arg(1)==6)){
+					if(!(arg(1)==5||arg(1)==6)&&arg(0)!='forward'){
 						//发布真人秀和转让潮的时候不让用户选择
 					?>
 					<div class="fbbtitle">
@@ -92,7 +101,12 @@
 									}
 								}
 							?>
-					<div class="fbstitle">请确认您<?php echo arg(1)==5?'转让':'秀';?>的是<span class="fbvp-username"><?php echo l("@$z_node->name","UCenter/0/$z_node->uid")?></span> <?php echo $taxonomy_name;?></div>
+					<div class="fbstitle">请确认您<?php 
+						$temp = arg(1)==5?'转让':'秀';
+						if(arg(0)=='forward'){
+							$temp = '分享'	;
+						}echo $temp;
+						?>的是<span class="fbvp-username"><?php echo l("@$z_node->name","UCenter/0/$z_node->uid")?></span> <?php echo $taxonomy_name;?></div>
 					<?}?>
 			  </div> 
 				<div class="fbuserimg"><img src="/<?php echo path_to_theme()?>/images/6.jpg" alt="" width="220" height="220" /></div>		

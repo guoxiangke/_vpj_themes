@@ -33,9 +33,11 @@
 		</div>
 		<div class="vp-body">
 		  <div class="vp-body-inner">
+		    <div class="fbvp-body-min">
 				<?php if ($show_messages && $messages): print $messages; endif; ?>			
 				<?php print $content;?>
-	    </div>		    
+			</div>
+	      </div>	
 		</div>		
 		<div id="footer" class="footer">
 			<?php print $footer_message . $footer?>
