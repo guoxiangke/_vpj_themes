@@ -77,7 +77,7 @@
 		});
     $('.login_link').click(function(e){
 			e.preventDefault();//阻止默认提交
-    	$("#loginModal").dialog("open").resizable();;
+    	$("#loginModal").dialog("open");
     	$("#edit-submit").show();
     });
     	}

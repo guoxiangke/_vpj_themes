@@ -38,7 +38,7 @@
 <?
 */
 ?>
-					<div class="logi_box">
+				
 						<div class="mjvp-content-child-news-nr">
 						    <div class="mjcontent-child-news-nr-img">
 								<?php  // width="50" height="50"									
@@ -58,5 +58,5 @@
 								</div>
 							</div>
 						</div>
-					</div>
-					</div>
+					</div><div class="clear"></div>
+

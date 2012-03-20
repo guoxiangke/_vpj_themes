@@ -11,6 +11,33 @@
 		<!--[if lt IE 7]>
 		<?php print phptemplate_get_ie_styles(); ?>
 		<![endif]-->
+		<script type="text/javascript">
+			$('.vp-favor-action').click(function(){
+				var signo=$(this).find('a');
+				$(this).parents().find('.dialogIn').fadeOut('fast');
+				$(this).parents().find('.dialogIn').parent().find('.gc-pl-sanjiao').fadeOut('fast');
+				var dialog_div=$(this).parent().parent().parent().next();
+				dialog_div.fadeIn('fast',function(){
+					signo.click();
+				});
+				dialog_div.addClass('dialogIn');
+				dialog_div.find('.gcfudivtext').val("求点评^_^");
+				//2012年3月19日 13:40:05 
+				//2012年3月20日 16:50:48外部点击事件
+
+				setTimeout(function(){
+					var flag=dialog_div.hasClass('dialogIn');
+					var word_flag=dialog_div.find('.gcfudivtext').val();
+					var mouse_flag=dialog_div.attr('mouseIn');
+					if(flag && mouse_flag=='out' && (word_flag=='求点评^_^' || word_flag=="评论已送出!!")){
+						dialog_div.fadeOut('fast');
+						dialog_div.removeClass('dialogIn');
+					}
+				},10000);
+			})
+
+
+		</script>
 	</head>
 	<body>
 		<div id="header-region" class="vp-clear-block">
@@ -62,9 +89,10 @@
 						</div>
 					</div>
 				</div>
-	        <div class="gcvp-body-right">
-				    <?php print $content?>
-					</div>
+        <div class="gcvp-body-right">
+			    <?php print $content?>
+				</div>
+				<div class="clear"></div>
 				</div>
 			</div>
 			<div class="clear"></div>

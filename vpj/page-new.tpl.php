@@ -34,13 +34,14 @@
 				//2012年3月19日 上传缩略图更改显示位置
 				/**
 				*上传的图片显示（onLoad）的同时，截取src赋值到顶部图片显示区域
+				2012年3月20日 p.m.
 				*/
-				var image_display_flag=$('.imagefield-preview img');
-				if(image_display_flag.attr('src').length>10){
-					console.log('The Image Loaded');
-				}
-
-
+				//console.log($('.imagefield-preview img').attr('src'));
+				//console.log($('.widget-edit').find('#edit-field-weibo-image-0-filefield-upload').prev().val());
+				//$('form').submit(function(){return false;})
+				$('.imagefield-preview img').load(function(){
+					console.log('loaded');
+				})
 			})			
 		</script>
 	</head>
@@ -109,12 +110,15 @@
 						?>的是<span class="fbvp-username"><?php echo l("@$z_node->name","UCenter/0/$z_node->uid")?></span> <?php echo $taxonomy_name;?></div>
 					<?}?>
 			  </div> 
+			  <?php if(arg(0)=='forward'){}else{
+			  	?>
 				<div class="fbuserimg"><img src="/<?php echo path_to_theme()?>/images/6.jpg" alt="" width="220" height="220" /></div>		
 				<div class="fbuploadimg">
 					<p>上传一张图片</p>
 					<p class="fbuploadsize">+ 上传图片</p>
 					<div class="clear"></div>
 			  </div>
+			  <?}?>
 				<?php print $content ?>
 				<div style="margin-top:32px;"></div>
 			</div>

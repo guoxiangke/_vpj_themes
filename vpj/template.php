@@ -209,3 +209,44 @@ function vpj_privatemsg_list($form) {
   $form['list'] = array('#value' => theme('table', $headers, $themed_rows, array('class' => 'privatemsg-list')), '#weight' => 5);
   return $output;//drupal_render($form).
 }
+
+/*
+ * 卖家页面评论 特效
+ * $activity_node
+ */
+function ucenter_seller_commets_output($activity_node){
+	$output .='<div class="gcfudiv">
+		           <div class="gc-pl-sanjiao"></div>
+			           <div class="gc-pl-bj">
+									 <div class="gcfudiv-top">
+										  <textarea value="求点评^_^" name="textarea" class="gcfudivtext" cols="10" rows="2">求点评^_^</textarea>
+											    <a style="text-decoration:none; font-color:black;position:absolute; margin-left:-10px;" class="close_box" href="javascript:void(0)">x</a>
+													<input type="button" class="gcfudivbtn" value="点评">
+													<div class="hidden">'.comment_form_box(array('nid' =>$activity_node->nid), t('点评')).'</div>
+													<div class="clear"></div>
+												</div>
+											 	<div class="gcfudiv-bottom">';
+											 			if($activity_node->comment_count){
+															$cid = db_result(db_query("select cid from comments where nid=$activity_node->nid AND pid =0 order by timestamp desc limit 0,1"));
+															$last_comment = _comment_load($cid);
+															$last_comment_user = user_load($last_comment->uid);
+							    					if(!$last_comment_user->picture)
+														$last_comment_user->picture = variable_get(user_picture_default, '/sites/default/files/users/0.gif');
+														$pic_path = imagecache_create_path('35x35', $last_comment_user->picture);
+									      		$output .=theme('imagecache', '35x35', $pic_path, $user->name, '',array('class'=>'hideMe')) ;
+							    	
+													 		//$output .='<img src="images/5.jpg" class="hideMe" width="35" height="35"/>';
+															$output .='	<p><span class="gcvp-name">'.$last_comment_user->name.'：</span>'.$last_comment->subject.'</p>
+																<div class="clear"></div>
+															';
+					             			}else{
+					             				$output .=theme('imagecache', '35x35', variable_get(user_picture_default, '/sites/default/files/users/0.gif'), '', '',array('class'=>'hideMe')) ;
+															$output .='	<p><span class="gcvp-name"></span> 还没有人评论，来抢沙发吧！</p>
+																<div class="clear"></div>
+															';
+					             			}
+			             			$output .='</div>
+		             		</div>
+	             		</div>';
+									return $output;
+}

@@ -29,7 +29,6 @@ if (in_array('Seller', $account -> roles)) {//对于卖家
 			    effect : "fadeIn",
 			    threshold : 500
 				});
-				console.log('I am ready to use load_stream ');
 			});
 		</script>	
 		<!--[if lt IE 7]>

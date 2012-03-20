@@ -186,6 +186,13 @@ body, div, ul, li, h1, p, input {
 	clear: both;
 }
 /*----------------------------------------买家*/
+#edit-comment-wrapper #edit-comment{
+  width:574px;
+  height:80px;
+}
+.mjvp-body-center .mjvp-contents .item-list{
+  width:100%;
+}
 .mjvp-body-center {
 	width: 100%;
 	padding-top: 40px;
@@ -308,18 +315,18 @@ body, div, ul, li, h1, p, input {
 	float: left;
 }
 .mjvp-context .status-box{
-  width:540px;
+  width:500px;
 }
 .mjvp-context-image-bk {
 	margin-right: 5px;
 	float: left;
 }
 .mjcontent-info-bottom-child {
-	padding: 10px;
-	width:518px;
+	padding: 10px 20px;
+	width:500px;
 	float: left;
 }
-	.mjchild-node{
+.mjchild-node{
 	width: 538px;
 	float: left;
 	padding: 10px 20px 0 20px;
@@ -857,6 +864,7 @@ body, div, ul, li, h1, p, input {
 	width: 675px;
 	margin-left: 10px;
 	overflow: hidden;
+	padding-bottom:100px;
 }
 .gcbody-right-content {
 	width: 100%;
@@ -1106,8 +1114,7 @@ body, div, ul, li, h1, p, input {
    position:absolute;
    top:0;
    left:0;
-   background-color:#000;
-   background:url(images/touming.png);
+   background-color:#999999;
    opacity:0.5;
 }
 #front .ui-dialog{
@@ -1898,13 +1905,14 @@ fieldset{
   width:100%;
 	border:0;
 	clear:both;
-	padding-top:50px;
+	padding-top:20px;
 }
 #edit-name{
-  width:250px;
+    width:250px;
 	height:25px;
 	line-height:25px;
 	float:Left; 
+	border:1px solid #f0f0f0;
 }
 #edit-name-wrapper{
    padding-bottom:20px;
@@ -1915,6 +1923,7 @@ fieldset{
 #edit-captcha-response{
     height:25px;
 	line-height:25px;
+	border:1px solid #f0f0f0;
 }
 #edit-decision-wrapper{
     margin:0 auto;
@@ -1983,6 +1992,7 @@ fieldset{
   width:250px;
 	height:25px;
 	line-height:25px;
+	border:1px solid #f0f0f0;
 }
 #front .captcha{
   width:230px;
@@ -1992,6 +2002,7 @@ fieldset{
 #front .captcha img{
   float:none;
 	position:static;
+	margin-left:10px;
 }
 #front .modal-body {
   padding: 15px;
@@ -2037,8 +2048,7 @@ fieldset{
 }
 .fbvp-body-min #edit-sina-vp-open-wrapper label{
   text-align:left;
-	margin-left:60px;
-	font-size:14px;
+  font-size:14px;
 }
 .fbvp-body-min #edit-sina-vp-open-wrapper label #edit-sina-vp-open{
   float:left;
@@ -2132,7 +2142,8 @@ fieldset{
 	width:auto;
 }
 .pm-message-content {
-	width:604px;
+	width:594px;
+	padding-left:10px;
 	float:left;
 }
 .pm-message-text{
@@ -2213,10 +2224,10 @@ fieldset{
     padding-top: 5px;
 }
 .mjvp-body-left .item-list .pager {
-    clear: both;
     line-height: 30px;
-    margin-bottom: 10px;
     text-align: center;
+	margin:0 auto;
+	width:auto;
 }
 .mjvp-body-left .item-list .pager li {
     background-image: none;
@@ -2230,7 +2241,7 @@ fieldset{
 }
 #comments #edit-sina-vp-open-wrapper{
   width:auto;
-	margin:15px 260px 0 0;
+   margin:20px 350px 0 10px;
 }
 .mjvp-contents .pager .last{
   width:auto;
@@ -2550,7 +2561,7 @@ fieldset{
   margin-left:200px;
 }
 .admin-menu #edit-submit{
-  margin-left:350px;
+  
 }
 /*----------------------------------------------*错误页面*/
 .lightbox-processed .left-corner .clear-block{
@@ -2589,4 +2600,90 @@ fieldset{
 #er_next_sub{display:none;}
 #er_next_step{
   cursor:pointer;
+}
+.box h2{
+  display:none;
+}
+.comment_hidden_title #edit-comment-wrapper label{
+  display:none;
+}
+.fbvp-body-min #comments{
+  margin-left:90px;
+}
+.admin-menu .fbvp-body-min .mjvp-conetnt{
+  border:0;
+}
+#comments .vpj_more_comments{
+    margin-right: 20px;
+    padding-top: 20px;
+    text-align: right;
+}
+#comments .item-list{
+   width:540px;
+   text-align:right;
+   padding:20px 0 0 0;
+}
+.mjvp-conetnt .standard #edit-title-1-wrapper label{
+  width:auto;
+}
+.mjvp-conetnt .standard #edit-title-1-wrapper label .form-required{
+  display:none;
+}
+textarea {
+resize:none;
+}
+.collapsible #edit-taxonomy-2-1-wrapper{
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+#edit-forward-comment-option-1-wrapper{
+  margin-left:30px;
+}
+#edit-forward-comment-option-1-wrapper label{
+  width:auto;
+}
+#node-form #edit-title-1-wrapper textarea{
+  width:574px;
+  height:80px;
+  padding:2px;
+  margin-top:10px;
+  border:1px solid #f0f0f0;
+}
+#node-form .node-form #edit-submit-1{
+  margin-left:280px;
+  background-color:#00cbff;
+}
+#node-form .node-form .standard #edit-sina-vp-open-1-wrapper{
+  margin-left:10px;
+}
+#node-form .node-form .standard #edit-sina-vp-open-1-wrapper label{
+  width:auto;
+}
+.lightbox-processed .fbvp-body-min #edit-title-wrapper #edit-title{
+  width:574px;
+  height:80px;
+  padding:2px;
+  margin-top:10px;
+  border:1px solid #f0f0f0;
+}
+.lightbox-processed .fbvp-body-min .node-form .standard #edit-title-wrapper{
+  margin:0;
+}
+.lightbox-processed #edit-sina-vp-open-wrapper label{
+  width:auto;
+  margin-left:10px;
+}
+.lightbox-processed #edit-forward-comment-option-wrapper{
+  margin:0;
+}
+.lightbox-processed #edit-forward-comment-option-wrapper label{
+  width:auto;
+  margin-left:30px;
+}
+.lightbox-processed .fbvp-body-min #node-form .node-form{
+  margin-left:100px;
+}
+.lightbox-processed .fbvp-body-min #node-form #edit-submit{
+  margin:20px 0 0 270px;
 }

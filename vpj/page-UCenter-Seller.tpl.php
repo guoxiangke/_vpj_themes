@@ -6,13 +6,12 @@
     <?php print $head ?>
     <title><?php print $head_title ?></title>
     <?php print $styles ?>
-    <?php 
-    //jquery_ui_add(array('ui.draggable', 'ui.droppable', 'ui.sortable'));
-    print $scripts ?>
-    <script type="text/javascript" src="/<?php echo drupal_get_path('module', 'sina_vp_imagetool') .'/js/jquery-1.7.1.js'?>"></script>
+    <?php print $scripts ?>
+   	<script type="text/javascript" src="/<?php echo drupal_get_path('module', 'sina_vp_imagetool') .'/js/jquery-1.7.1.js'?>"></script>
     <script src="/sites/all/modules/Vp/sina_vp_imagetool/js/jquery.lazyload.min.js?a" type="text/javascript"></script>		
 		<script type="text/javascript">			
 			var $jq = jQuery.noConflict();  
+			var page_flag="Seller";
 			$jq(document).ready(function(){
 				$jq("img.lazy").lazyload({
 			    effect : "fadeIn",
@@ -20,8 +19,32 @@
 				});
 				//alert($('.gcfudiv').length);
 				$('.gcfudiv').css('position','absolute');
+				$('.vp-favor-action').click(function(){
+					var signo=$(this).find('a');
+					$(this).parents().find('.dialogIn').fadeOut('fast');
+					$(this).parents().find('.dialogIn').parent().find('.gc-pl-sanjiao').fadeOut('fast');
+					var dialog_div=$(this).parent().parent().next();
+					dialog_div.fadeIn('fast',function(){
+						signo.click();
+					});
+					dialog_div.addClass('dialogIn');
+					dialog_div.find('.gcfudivtext').val("求点评^_^");
+					//2012年3月19日 13:40:05 
+					//2012年3月20日 16:50:48外部点击事件
+
+					setTimeout(function(){
+						var flag=dialog_div.hasClass('dialogIn');
+						var word_flag=dialog_div.find('.gcfudivtext').val();
+						var mouse_flag=dialog_div.attr('mouseIn');
+						if(flag && mouse_flag=='out' && (word_flag=='求点评^_^' || word_flag=="评论已送出!!")){
+							dialog_div.fadeOut('fast');
+							dialog_div.removeClass('dialogIn');
+						}
+					},10000);
+					//alert('this is works');
+				})
 			});
-		</script>	
+		</script>
 		<!--[if lt IE 7]>
 		<?php print phptemplate_get_ie_styles(); ?>
 		<![endif]-->
@@ -98,7 +121,7 @@
 							      $activity_nids [] = $row['nid'];
 										$rows = TRUE;
 							    }
-									if($activity_nids){//判断图片del  分享无图片，怎么办？
+									if($activity_nids){//判断图片  分享无图片
 										foreach ($activity_nids as $activity_nid) {
 											$activity_node = node_load($activity_nid);
 											if($weibo_image_filepath=$activity_node->field_weibo_image['0']['filepath'])break;
@@ -119,10 +142,10 @@
 									  	<?php echo l($activity_node->title,"node/$activity_node->nid",array('html'=>TRUE,'attributes'=>array('class'=>'Seller-activity-content'))); ?>
 										</div>
 										<div class="sellhuo-zz">
-											<div class="vp-favor-action">
-												<img src="/<?php echo path_to_theme()?>/images/xin.gif" height="15" width="15">
-												<?echo flag_create_link('bookmarks', $activity_node->nid);	?>
-											</div>
+													<div class="vp-favor-action">
+														<img src="/<?php echo path_to_theme()?>/images/xin.gif" height="15" width="15">
+														<?echo flag_create_link('bookmarks', $activity_node->nid);	?>
+											</div>	
 											<?php echo l("点评$activity_node->comment_count","node/$activity_node->nid/",array('fragment'=>'comment-form','attributes'=>array('class'=>'Seller-Sell-forward')));?>
 											<?php 
 						          	$taxonomys = $activity_node->taxonomy;
@@ -136,30 +159,11 @@
 												echo l("分享$share_counts","forward/$taxonomy_id/$activity_node->nid",array('attributes'=>array('class'=>'Seller-Sell-forward')));
 											?>
 										</div>
-										<!--BEGIN COMMENTS -->
-										<div class="gcfudiv">
-		             			<div class="gc-pl-sanjiao"></div>
-			             		<div class="gc-pl-bj">
-												<div class="gcfudiv-top">
-													<textarea value="求点评^_^" name="textarea" class="gcfudivtext" cols="10" rows="2">求点评^_^</textarea>
-													<a style="text-decoration:none; font-color:black;position:absolute; margin-left:-10px;" class="close_box" href="javascript:void(0)">x</a>
-													<input type="button" class="gcfudivbtn" value="点评">
-													<div class="hidden">
-														<div class="box">
-													  <h2>点评</h2>
-													  <div class="content">FORM BIAODAN
-														</div>
-														</div>
-													</div>
-													<div class="clear"></div>
-												</div>
-											 	<div class="gcfudiv-bottom">
-														<img width="35" height="35" class="hideMe" title="" alt="" src="http://dev.weipujie.com/?q=sites/default/files/imagecache/35x35/imagecache/35x35/users/picture-51.jpg">	<p><span class="gcvp-name">威海小K：</span>asdfadfadfadf</p>
-														<div class="clear"></div>
-			             			</div>
-		             		</div>
-	             		</div>
-										<!--END COMMENTS-->
+										<?php
+										//<!--BEGIN COMMENTS -->
+										echo ucenter_seller_commets_output($activity_node);
+										//<!--END COMMENTS-->
+										?>
 									</div>
 									<div class="clear"></div>
 								</div>
@@ -225,30 +229,11 @@
 												echo l("分享$share_counts","forward/$taxonomy_id/$activity_node->nid",array('attributes'=>array('class'=>'Seller-Sell-forward')));
 											?>
 										</div>
-										<!--BEGIN COMMENTS -->
-										<div class="gcfudiv">
-		             			<div class="gc-pl-sanjiao"></div>
-			             		<div class="gc-pl-bj">
-												<div class="gcfudiv-top">
-													<textarea value="求点评^_^" name="textarea" class="gcfudivtext" cols="10" rows="2">求点评^_^</textarea>
-													<a style="text-decoration:none; font-color:black;position:absolute; margin-left:-10px;" class="close_box" href="javascript:void(0)">x</a>
-													<input type="button" class="gcfudivbtn" value="点评">
-													<div class="hidden">
-														<div class="box">
-													  <h2>点评</h2>
-													  <div class="content">FORM BIAODAN
-														</div>
-														</div>
-													</div>
-													<div class="clear"></div>
-												</div>
-											 	<div class="gcfudiv-bottom">
-														<img width="35" height="35" class="hideMe" title="" alt="" src="http://dev.weipujie.com/?q=sites/default/files/imagecache/35x35/imagecache/35x35/users/picture-51.jpg">	<p><span class="gcvp-name">威海小K：</span>asdfadfadfadf</p>
-														<div class="clear"></div>
-			             			</div>
-		             		</div>
-	             		</div>
-										<!--END COMMENTS-->
+										<?php
+										//<!--BEGIN COMMENTS -->
+										echo ucenter_seller_commets_output($activity_node);
+										//<!--END COMMENTS-->
+										?>
 									</div>
 									<div class="clear"></div>
 								</div>
@@ -303,7 +288,11 @@
 				?>
 									<div class="sell-zrx-xx <?php if($count==3)echo 'rightlast'?>">
 										<div class="sell-zrx-pic">
-											<?php echo l(theme_image($weibo_image_filepath, '', '',array('class'=>'Seller-activity-image'), $getsize = TRUE),"node/$activity_node->nid",array('html'=>TRUE,'attributes'=>array('class'=>'Seller-activity-image-link')));?>
+											<?php 
+												imagecache_generate_image('100x100',  $weibo_image_filepath);
+												echo l(theme('imagecache', '100x100', $weibo_image_filepath, '', '', array('class'=>'Seller-activity-image')),"node/$activity_node->nid",array('html'=>TRUE,'attributes'=>array('class'=>'Sa-image-link')));
+												//echo l(theme_image($weibo_image_filepath, '', '',array('class'=>'Seller-activity-image'), $getsize = TRUE),"node/$activity_node->nid",array('html'=>TRUE,'attributes'=>array('class'=>'Seller-activity-image-link')));
+											?>		
 										</div>
 										<div class="sell-zrx-zz">
 											<div class="sellzrx-love">
@@ -317,30 +306,11 @@
 											</div>
 										</div>
 										
-										<!--BEGIN COMMENTS -->
-										<div class="gcfudiv">
-		             			<div class="gc-pl-sanjiao"></div>
-			             		<div class="gc-pl-bj">
-												<div class="gcfudiv-top">
-													<textarea value="求点评^_^" name="textarea" class="gcfudivtext" cols="10" rows="2">求点评^_^</textarea>
-													<a style="text-decoration:none; font-color:black;position:absolute; margin-left:-10px;" class="close_box" href="javascript:void(0)">x</a>
-													<input type="button" class="gcfudivbtn" value="点评">
-													<div class="hidden">
-														<div class="box">
-													  <h2>点评</h2>
-													  <div class="content">FORM BIAODAN
-														</div>
-														</div>
-													</div>
-													<div class="clear"></div>
-												</div>
-											 	<div class="gcfudiv-bottom">
-														<img width="35" height="35" class="hideMe" title="" alt="" src="http://dev.weipujie.com/?q=sites/default/files/imagecache/35x35/imagecache/35x35/users/picture-51.jpg">	<p><span class="gcvp-name">威海小K：</span>asdfadfadfadf</p>
-														<div class="clear"></div>
-			             			</div>
-		             		</div>
-	             		</div>
-										<!--END COMMENTS-->
+									<?php
+										//<!--BEGIN COMMENTS -->
+										echo ucenter_seller_commets_output($activity_node);
+										//<!--END COMMENTS-->
+										?>
 									</div>
 									<?}} if($count==0){echo '还没有秀呢!';}?>
 									<div class="clear"></div>
@@ -391,7 +361,11 @@
 								?>
 									<div class="sell-zrx-xx <?php if($count==3)echo 'rightlast'?>">
 										<div class="sell-zrx-pic">
-											<?php echo l(theme_image($weibo_image_filepath, '', '',array('class'=>'Seller-activity-image'), $getsize = TRUE),"node/$activity_node->nid",array('html'=>TRUE,'attributes'=>array('class'=>'Seller-activity-image-link')));?>
+											<?php 
+												imagecache_generate_image('100x100',  $weibo_image_filepath);
+												echo l(theme('imagecache', '100x100', $weibo_image_filepath, '', '', array('class'=>'Seller-activity-image')),"node/$activity_node->nid",array('html'=>TRUE,'attributes'=>array('class'=>'Sa-image-link')));
+												//echo l(theme_image($weibo_image_filepath, '', '',array('class'=>'Seller-activity-image'), $getsize = TRUE),"node/$activity_node->nid",array('html'=>TRUE,'attributes'=>array('class'=>'Seller-activity-image-link')));
+											?>	
 										</div>
 										<div class="sell-zrx-zz">
 											<div class="sellzrx-love">
@@ -405,30 +379,11 @@
 											</div>
 										</div>
 										
-										<!--BEGIN COMMENTS -->
-										<div class="gcfudiv">
-		             			<div class="gc-pl-sanjiao"></div>
-			             		<div class="gc-pl-bj">
-												<div class="gcfudiv-top">
-													<textarea value="求点评^_^" name="textarea" class="gcfudivtext" cols="10" rows="2">求点评^_^</textarea>
-													<a style="text-decoration:none; font-color:black;position:absolute; margin-left:-10px;" class="close_box" href="javascript:void(0)">x</a>
-													<input type="button" class="gcfudivbtn" value="点评">
-													<div class="hidden">
-														<div class="box">
-													  <h2>点评</h2>
-													  <div class="content">FORM BIAODAN
-														</div>
-														</div>
-													</div>
-													<div class="clear"></div>
-												</div>
-											 	<div class="gcfudiv-bottom">
-														<img width="35" height="35" class="hideMe" title="" alt="" src="http://dev.weipujie.com/?q=sites/default/files/imagecache/35x35/imagecache/35x35/users/picture-51.jpg">	<p><span class="gcvp-name">威海小K：</span>asdfadfadfadf</p>
-														<div class="clear"></div>
-			             			</div>
-		             		</div>
-	             		</div>
-										<!--END COMMENTS-->
+										<?php
+										//<!--BEGIN COMMENTS -->
+										echo ucenter_seller_commets_output($activity_node);
+										//<!--END COMMENTS-->
+										?>
 									</div>
 									<?}} if($count==0){echo '还没有转让潮!';}?>
 									<div class="clear"></div>
@@ -438,7 +393,7 @@
 								<div class="sellhuo-title">
 										<p>新品</p>
 										<p class="sellmore">
-										<?php echo l('更多>>','plaza/New/all/'.$account->uid)?>
+										<?php echo l('更多>>','plaza/News/all/'.$account->uid)?>
 										</p>
 								</div>
 								<div class="sell-zrxbody">
@@ -448,8 +403,9 @@
 												LEFT JOIN term_data term_data ON term_node.tid = term_data.tid 
 												WHERE (node.uid = %d)  AND  (node.status = 1)
 												AND (node.type in ("weibo")) AND ((term_data.name) = ("新品")) 
-												ORDER BY node_created DESC LIMIT 0 , 3';//活动3条
+												ORDER BY node_created DESC LIMIT 0 , 3';//活动3条 
 						  	  $results = db_query($sql,$account->uid);
+									unset($news_nids);
 									while($row = db_fetch_array($results)){
 							      $news_nids [] = $row['nid'];
 							    }
@@ -481,31 +437,11 @@
 														<?php echo l("点评($activity_node->comment_count)","node/$activity_node->nid/",array('fragment'=>'comment-form','attributes'=>array('class'=>'Seller-Sell-forward')));?>
 														</div>
 													</div>
-													
-														<!--BEGIN COMMENTS -->
-														<div class="gcfudiv">
-						             			<div class="gc-pl-sanjiao"></div>
-							             		<div class="gc-pl-bj">
-																<div class="gcfudiv-top">
-																	<textarea value="求点评^_^" name="textarea" class="gcfudivtext" cols="10" rows="2">求点评^_^</textarea>
-																	<a style="text-decoration:none; font-color:black;position:absolute; margin-left:-10px;" class="close_box" href="javascript:void(0)">x</a>
-																	<input type="button" class="gcfudivbtn" value="点评">
-																	<div class="hidden">
-																		<div class="box">
-																	  <h2>点评</h2>
-																	  <div class="content">FORM BIAODAN
-																		</div>
-																		</div>
-																	</div>
-																	<div class="clear"></div>
-																</div>
-															 	<div class="gcfudiv-bottom">
-																		<img width="35" height="35" class="hideMe" title="" alt="" src="http://dev.weipujie.com/?q=sites/default/files/imagecache/35x35/imagecache/35x35/users/picture-51.jpg">	<p><span class="gcvp-name">威海小K：</span>asdfadfadfadf</p>
-																		<div class="clear"></div>
-							             			</div>
-						             		</div>
-					             		</div>
-														<!--END COMMENTS-->
+													<?php
+													//<!--BEGIN COMMENTS -->
+													echo ucenter_seller_commets_output($activity_node);
+													//<!--END COMMENTS-->
+													?>
 												</div>
 												<?php
 											}
@@ -564,31 +500,11 @@
 														<?php echo l("点评($activity_node->comment_count)","node/$activity_node->nid/",array('fragment'=>'comment-form','attributes'=>array('class'=>'Seller-Sell-forward')));?>
 														</div>
 													</div>
-													
-													<!--BEGIN COMMENTS -->
-													<div class="gcfudiv">
-					             			<div class="gc-pl-sanjiao"></div>
-						             		<div class="gc-pl-bj">
-															<div class="gcfudiv-top">
-																<textarea value="求点评^_^" name="textarea" class="gcfudivtext" cols="10" rows="2">求点评^_^</textarea>
-																<a style="text-decoration:none; font-color:black;position:absolute; margin-left:-10px;" class="close_box" href="javascript:void(0)">x</a>
-																<input type="button" class="gcfudivbtn" value="点评">
-																<div class="hidden">
-																	<div class="box">
-																  <h2>点评</h2>
-																  <div class="content">FORM BIAODAN
-																	</div>
-																	</div>
-																</div>
-																<div class="clear"></div>
-															</div>
-														 	<div class="gcfudiv-bottom">
-																	<img width="35" height="35" class="hideMe" title="" alt="" src="http://dev.weipujie.com/?q=sites/default/files/imagecache/35x35/imagecache/35x35/users/picture-51.jpg">	<p><span class="gcvp-name">威海小K：</span>asdfadfadfadf</p>
-																	<div class="clear"></div>
-						             			</div>
-					             		</div>
-				             		</div>
-													<!--END COMMENTS-->
+													<?php
+													//<!--BEGIN COMMENTS -->
+													echo ucenter_seller_commets_output($activity_node);
+													//<!--END COMMENTS-->
+													?>
 												</div>
 												<?php
 											}
@@ -621,8 +537,9 @@
 						</div>
 						<div class="mjvp-contents">
 						<?php 
-						require_once './' . drupal_get_path('module', 'sina_vp') . "/sina_vp.pages.inc";						
-						print(sina_UCenter_saler_page(arg(1),$account->uid));	?>
+						require_once './' . drupal_get_path('module', 'sina_vp') . "/sina_vp.pages.inc";			
+						//?q=UCenter			//sina_UCenter_saler_page
+						print(sina_UCenter_page(arg(1),$account->uid));	?>
 						</div>
 						<!--end UCenter-->
 				</div>

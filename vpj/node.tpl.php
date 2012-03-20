@@ -1,3 +1,11 @@
+<script type="text/javascript">
+	$('#comment-form').submit(function(){
+		var flag=$(this).find('#edit-comment').val();
+		if(flag==""){
+			return false;
+		}
+	})
+</script>
 <?php
 if($node->type=='weibo'){
 		$account = user_load($node->uid);
@@ -81,11 +89,11 @@ if($node->type=='weibo'){
 									// izjmax-width
 						 		if(arg(0)=='node'){//节点页，终极页 显示方式，带淘宝链接。								
 									?>
-									<div class="mjchild-node">
 										<div class="mjvp-context-image">
 											 <div class="mjvp-context-image-bk">
 													<?php												
 													if($image_link = $node->field_image_link['0']['url']){
+														$image_link .='?'.$node->field_image_link['0']['query'];
 														echo  l(theme('imagecache', 'w516', $grey, '', '', array('class'=>'lazy normal-image','data-original'=>'/'.$path),false)
 																		,$image_link
 																		,array('html'=>TRUE,'attributes'=>array('class'=>'weibo_image_link','target'=>'_blank')));
@@ -94,7 +102,6 @@ if($node->type=='weibo'){
 													}?>										    
 											 </div>  						
 										</div>
-								  </div>
 								<?php								
 								}else{
 								?>

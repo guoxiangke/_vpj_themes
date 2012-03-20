@@ -41,9 +41,9 @@
     	?> 
     	<div class="navigation">
             <ul>
-                <li class="vpjnav"><?php echo l('首页','/',array('attributes'=>array('class'=>'login_link')));?></li>
-                <li class="vpjnav"><?php echo l('店铺街','/',array('attributes'=>array('class'=>'login_link')));?></li>
-                <li class="vpjnav"><?php echo l('广场','/',array('attributes'=>array('class'=>'login_link')));?></li>
+                <li class="vpjnav"><?php  print '<a href="'. check_url($front_page) .'" class="login_link">首页</a>';?></li>
+                <li class="vpjnav"><?php  print '<a href="'. check_url($front_page) .'" class="login_link">店铺街</a>';?></li>
+                <li class="vpjnav"><?php  print '<a href="'. check_url($front_page) .'" class="login_link">广场</a>';?></li>
             </ul>
         </div>   	
 
